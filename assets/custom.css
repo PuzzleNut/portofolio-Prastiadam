@@ -1084,3 +1084,27 @@ html[data-theme="light"] .ppl2-portfolio-tab, html[data-theme="light"] .ppl2-sid
 @media (max-width: 900px) { .seminar-preview-lazy, .seminar-preview-placeholder { min-height: 500px; } }
 @media (max-width: 600px) { .seminar-preview-lazy, .seminar-preview-placeholder { min-height: 420px; } .seminar-preview-placeholder { padding: 20px; } }
 
+
+/* Seminar Refleksi dropdown: forgiving desktop hover target */
+@media (min-width: 981px) and (hover: hover) and (pointer: fine) {
+  #navbar #dropdown-seminar-refleksi > .dropdown-content {
+    top: 100%;
+    transform: translateX(-50%) translateY(0);
+  }
+  #navbar #dropdown-seminar-refleksi > .dropdown-content::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+  }
+  #navbar #dropdown-seminar-refleksi:hover > .dropdown-content,
+  #navbar #dropdown-seminar-refleksi.show > .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+    transition-delay: 0s;
+  }
+}
