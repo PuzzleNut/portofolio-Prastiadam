@@ -1,0 +1,42 @@
+.doc-preview-thumb iframe{display:none!important}
+.doc-preview-thumb-fallback.pdf-cover{flex-direction:column;gap:6px;font-size:32px;color:var(--gold);opacity:1}.doc-preview-thumb-fallback.pdf-cover svg{width:38px;height:48px}
+.pdf-label{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--bg);background:var(--gold);padding:2px 6px;border-radius:4px}
+
+/* ===== Halaman "Sedang Dibuat" (Refleksi Selama PPG & Inovasi Pendidikan) ===== */
+.soon-card{position:relative;max-width:760px;margin:8px auto 40px;padding:56px 36px 44px;text-align:center;border-radius:24px;overflow:hidden;
+  background:linear-gradient(160deg,color-mix(in oklab,var(--card) 86%,transparent),color-mix(in oklab,var(--bg2) 78%,transparent));
+  border:1px solid color-mix(in oklab,var(--gold) 28%,var(--border));
+  box-shadow:0 24px 70px var(--shadow-c-40),inset 0 1px 0 color-mix(in oklab,var(--gold) 18%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.soon-card:before{content:"";position:absolute;inset:-60% -20% auto -20%;height:100%;pointer-events:none;
+  background:radial-gradient(closest-side,color-mix(in oklab,var(--gold) 22%,transparent),transparent 70%);opacity:.55;animation:soon-glow 7s ease-in-out infinite alternate}
+.soon-card>*{position:relative}
+.soon-orbit{position:relative;width:132px;height:132px;margin:0 auto 26px;display:grid;place-items:center}
+.soon-ring{position:absolute;inset:0;border-radius:50%;border:1.5px dashed color-mix(in oklab,var(--gold) 55%,transparent);animation:soon-spin 18s linear infinite}
+.soon-ring-2{inset:16px;border:1.5px solid color-mix(in oklab,var(--blue) 45%,transparent);border-top-color:var(--gold);animation:soon-spin 6s linear infinite reverse}
+.soon-icon{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;font-size:26px;color:var(--on-gold);
+  background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 0 0 6px color-mix(in oklab,var(--gold) 16%,transparent),0 10px 30px color-mix(in oklab,var(--gold) 45%,transparent);animation:soon-float 3.2s ease-in-out infinite}
+.soon-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:soon-twinkle 2.4s ease-in-out infinite}
+.soon-dot-1{top:4px;right:20px}.soon-dot-2{bottom:10px;left:6px;background:var(--blue);box-shadow:0 0 12px var(--blue);animation-delay:.8s}.soon-dot-3{top:46%;right:-6px;background:var(--gold);box-shadow:0 0 12px var(--gold);animation-delay:1.6s}
+.soon-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  background:color-mix(in oklab,var(--gold) 12%,transparent);border:1px solid color-mix(in oklab,var(--gold) 32%,transparent);margin-bottom:18px}
+.soon-badge i{animation:soon-hourglass 3s ease-in-out infinite}
+.soon-title{font-family:var(--serif);font-size:clamp(22px,3.6vw,32px);font-weight:700;line-height:1.3;margin:0 auto 14px;max-width:560px;
+  background:var(--heading-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--heading-ink)}
+.soon-desc{max-width:560px;margin:0 auto 28px;color:var(--muted);font-size:15.5px;line-height:1.85}
+.soon-bar{width:min(320px,80%);height:6px;margin:0 auto 26px;border-radius:999px;overflow:hidden;background:var(--surface-4)}
+.soon-bar span{display:block;width:42%;height:100%;border-radius:inherit;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),transparent);animation:soon-slide 2.1s ease-in-out infinite}
+.soon-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}
+.soon-chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;color:var(--text);
+  background:var(--surface-2);border:1px solid var(--border);transition:transform .25s ease,border-color .25s ease,color .25s ease}
+.soon-chip i{color:var(--gold);font-size:12px}
+.soon-chip:hover{transform:translateY(-3px);border-color:color-mix(in oklab,var(--gold) 55%,transparent);color:var(--gold2)}
+.soon-quote{max-width:520px;margin:0 auto;padding-top:22px;border-top:1px solid var(--border);font-family:var(--serif);font-style:italic;font-size:14.5px;line-height:1.8;color:var(--muted)}
+@keyframes soon-spin{to{transform:rotate(360deg)}}
+@keyframes soon-float{0%,100%{transform:translateY(-4px)}50%{transform:translateY(5px)}}
+@keyframes soon-twinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes soon-slide{0%{transform:translateX(-110%)}100%{transform:translateX(260%)}}
+@keyframes soon-glow{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+@keyframes soon-hourglass{0%,40%{transform:rotate(0)}60%,100%{transform:rotate(180deg)}}
+@media (max-width:600px){.soon-card{padding:40px 20px 32px;border-radius:20px}.soon-orbit{width:112px;height:112px}.soon-desc{font-size:14.5px}}
+@media (prefers-reduced-motion:reduce){.soon-card:before,.soon-ring,.soon-ring-2,.soon-icon,.soon-dot,.soon-badge i,.soon-bar span{animation:none}.soon-bar span{width:60%;margin-left:20%}}

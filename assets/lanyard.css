@@ -1,0 +1,47 @@
+.lanyard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lanyard-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Kolom kanan hero: mulai dari atas supaya tali menempel ke bawah navbar.
+   min-width:0 mencegah kolom grid ikut melebar saat kanvas dibuat lebih lebar. */
+.hero-photo-wrap {
+  align-self: start;
+  min-width: 0;
+}
+
+/* Section hero tidak memotong tali yang naik sampai tepi bawah navbar
+   (di lebar 769–1024px navbar 60px sedangkan padding halaman 72px). */
+#hero-wrap-section {
+  overflow: visible;
+}
+
+/* Wadah lanyard 3D. Posisi atas, lebar, dan margin kiri diatur otomatis oleh
+   skrip di index.html: tepat di bawah navbar dan membentang sampai tepi kanan
+   layar supaya kartu bisa ditarik sejauh itu. */
+.lanyard-3d {
+  align-self: flex-start;
+  flex: none;
+  width: 100%;
+  height: clamp(520px, calc(100vh - 150px), 760px);
+}
+
+/* Layout satu kolom (breakpoint website: 1024px): lanyard di atas teks,
+   bukan menimpanya. */
+@media (max-width: 1024px) {
+  .hero-photo-wrap {
+    order: -1;
+  }
+
+  .lanyard-3d {
+    height: clamp(440px, 70vh, 600px);
+  }
+}
