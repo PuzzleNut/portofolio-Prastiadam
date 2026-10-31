@@ -866,6 +866,7 @@ export function Lanyard(container, options = {}) {
   let placed = false;
   let hovering = false;
   let press = null;
+  let forwardedAction = null;
   let imageToken = 0;
   const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
@@ -1145,13 +1146,37 @@ export function Lanyard(container, options = {}) {
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
 
-  const toPointer = event => {
+  const toPointer = (event, keepCardInside = false) => {
     const rect = canvas.getBoundingClientRect();
+    let clientX = event.clientX;
+    let clientY = event.clientY;
+    if (keepCardInside && sim.grab && rect.width > 0 && rect.height > 0) {
+      // Batasi titik tarik berdasarkan setengah ukuran kartu agar kartu tetap
+      // terlihat utuh saat mencapai sisi kanan maupun batas bawah area drag.
+      const cardHeight = rect.height * settings.size;
+      const cardHalfHeight = Math.min(cardHeight * 0.48, rect.height * 0.42);
+      const cardHalfWidth = Math.min(
+        cardHeight * (layout.width / layout.height) * 0.48,
+        rect.width * 0.42
+      );
+      clientX = clamp(clientX, rect.left + cardHalfWidth, rect.right - cardHalfWidth);
+      clientY = clamp(clientY, rect.top + cardHalfHeight, rect.bottom - cardHalfHeight);
+    }
     pointer.set(
-      ((event.clientX - rect.left) / rect.width) * 2 - 1,
-      -((event.clientY - rect.top) / rect.height) * 2 + 1
+      ((clientX - rect.left) / rect.width) * 2 - 1,
+      -((clientY - rect.top) / rect.height) * 2 + 1
     );
     raycaster.setFromCamera(pointer, camera);
+  };
+
+  const findUnderlyingAction = (x, y) => {
+    const stack = document.elementsFromPoint(x, y);
+    for (const element of stack) {
+      if (container.contains(element)) continue;
+      const target = element.closest?.('a, button, [role="button"], [data-onclick]');
+      if (target && !container.contains(target)) return target;
+    }
+    return null;
   };
 
   const pickCard = () => {
@@ -1180,7 +1205,20 @@ export function Lanyard(container, options = {}) {
     if (!settings.interactive || event.button > 0) return;
     toPointer(event);
     const hit = pickCard();
-    if (!hit) return;
+    if (!hit) {
+      // Kanvas melebar sampai ke teks pada mobile. Teruskan tap ke tombol/link
+      // di bawah kanvas jika pengguna tidak sedang menyentuh kartu 3D.
+      const target = findUnderlyingAction(event.clientX, event.clientY);
+      forwardedAction = target ? {
+        target,
+        x: event.clientX,
+        y: event.clientY,
+        time: performance.now(),
+        pointerId: event.pointerId
+      } : null;
+      return;
+    }
+    forwardedAction = null;
     sim.grab = {
       local: hit.point.clone().sub(sim.body.position).applyQuaternion(sim.body.quaternion.clone().invert()),
       rotation: sim.body.quaternion.clone(),
@@ -1197,20 +1235,35 @@ export function Lanyard(container, options = {}) {
 
   const onPointerMove = event => {
     if (!settings.interactive) return;
-    toPointer(event);
     if (sim.grab) {
       if (press && Math.hypot(event.clientX - press.x, event.clientY - press.y) > 6) press = null;
+      toPointer(event, true);
       raycaster.ray.at(sim.grab.reach, sim.grab.target);
       start();
       return;
     }
+    toPointer(event);
     if (event.pointerType === 'touch') return;
     hovering = !!pickCard();
     setCursor(hovering ? 'grab' : '');
   };
 
   const onPointerUp = event => {
-    if (!sim.grab) return;
+    if (!sim.grab) {
+      const pending = forwardedAction;
+      forwardedAction = null;
+      if (pending && event.type === 'pointerup' && pending.pointerId === event.pointerId &&
+          performance.now() - pending.time < 700 &&
+          Math.hypot(event.clientX - pending.x, event.clientY - pending.y) < 10 &&
+          pending.target?.isConnected) {
+        const endTarget = findUnderlyingAction(event.clientX, event.clientY);
+        if (endTarget && (endTarget === pending.target || pending.target.contains(endTarget) || endTarget.contains(pending.target))) {
+          pending.target.click();
+        }
+      }
+      return;
+    }
+    forwardedAction = null;
     sim.grab = null;
     if (press && event.type === 'pointerup' && performance.now() - press.time < 450) flip(press.point);
     press = null;

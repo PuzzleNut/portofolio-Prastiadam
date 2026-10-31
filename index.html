@@ -12,33 +12,35 @@ gyroscope;
 picture-in-picture;
 "
 allowfullscreen
-></iframe></div></div></div><div id="loading-screen"><canvas id="rain-canvas"></canvas><div class="loading-content"><div class="loading-logo"><img src="logo-uny.png" alt="Logo UNY" / fetchpriority="high" decoding="async"></div><div class="loading-title">PPG Prajabatan</div><div class="loading-sub">Program Profesi Guru</div><div class="loading-univ">Universitas Negeri Yogyakarta</div><div class="loading-bar"><div class="loading-bar-fill"></div></div></div></div><a class="skip-link" href="#main-content">Lewati ke konten utama</a><nav id="navbar" aria-label="Navigasi utama"><div class="nav-brand" role="button" tabindex="0" aria-label="Kembali ke Beranda" data-onclick="showPage('beranda')" data-onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('beranda')}"><i class="fas fa-graduation-cap" aria-hidden="true"></i> E-Portofolio
-<em>&nbsp;PPG UNY</em></div><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Aktifkan mode terang" data-onclick="toggleTheme()"><i class="fas fa-sun" aria-hidden="true"></i></button><button id="nav-toggle" class="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links" data-onclick="toggleMobileMenu()"><span></span><span></span><span></span></button><ul class="nav-links" id="nav-links" data-navmode="main"><li><a href="#beranda" data-onclick="showPage('beranda');return false" id="nav-beranda" class="active" aria-current="page">Beranda</a></li><li><a href="#profil-mahasiswa" data-onclick="enterSemester1();return false" id="nav-semester-1">PPL 1</a></li><li><a href="#semester-2" data-onclick="showPage('semester-2');return false" id="nav-semester-2">PPL 2</a></li><li><a href="#identifikasi-diri" data-onclick="enterSeminar();return false" id="nav-seminar-ppg">Seminar PPG</a></li><li><a href="#about" data-onclick="showPage('about');return false" id="nav-about">About</a></li></ul><ul class="nav-links" id="nav-links-sem1" data-navmode="sem1" hidden><li><a href="#profil-mahasiswa" data-onclick="showPage('profil-mahasiswa');return false" id="nav-profil-mahasiswa">Profil Mahasiswa</a></li><li class="dropdown" id="dropdown-porto1"><button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-porto1" data-onclick="toggleDropdown('dropdown-porto1')"
+></iframe></div></div></div><div id="loading-screen"><canvas id="rain-canvas"></canvas><div class="loading-content"><div class="loading-logo"><img src="logo-uny.png" alt="Logo UNY" / fetchpriority="high" decoding="async"></div><div class="loading-title">PPG Prajabatan</div><div class="loading-sub">Program Profesi Guru</div><div class="loading-univ">Universitas Negeri Yogyakarta</div><div class="loading-bar"><div class="loading-bar-fill"></div></div></div></div><a class="skip-link" href="#main-content">Lewati ke konten utama</a><nav id="navbar" aria-label="Navigasi utama"><div class="nav-brand" role="button" tabindex="0" aria-label="Kembali ke Beranda" data-onclick="showPage('beranda')" data-onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('beranda')}"><img class="nav-brand-logo" src="logo-uny.png" alt="Logo Universitas Negeri Yogyakarta" /><span class="nav-brand-copy"><span class="nav-brand-title">E-Portofolio</span><em>PPG UNY</em></span></div><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Aktifkan mode terang" data-onclick="toggleTheme()"><i class="fas fa-sun" aria-hidden="true"></i></button><button id="nav-toggle" class="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links" data-onclick="toggleMobileMenu()"><span></span><span></span><span></span></button><ul class="nav-links" id="nav-links" data-navmode="main"><li><a href="#beranda" data-onclick="showPage('beranda');return false" id="nav-beranda" class="active" aria-current="page">Beranda</a></li><li><a href="#profil-mahasiswa" data-onclick="showPage('profil-mahasiswa');return false" id="nav-profil-mahasiswa">Profil Mahasiswa</a></li><li><a href="#analisis-artefak" data-onclick="enterSemester1();return false" id="nav-semester-1">PPL 1</a></li><li><a href="#semester-2" data-onclick="showPage('semester-2');return false" id="nav-semester-2">PPL 2</a></li><li><a href="#identifikasi-diri" data-onclick="enterSeminar();return false" id="nav-seminar-ppg">Seminar PPG</a></li><li><a href="#about" data-onclick="showPage('about');return false" id="nav-about">About</a></li></ul><ul class="nav-links" id="nav-links-sem1" data-navmode="sem1" hidden><li class="dropdown" id="dropdown-porto1"><button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-porto1" data-onclick="toggleDropdown('dropdown-porto1')"
 >Portofolio 1 <i class="fas fa-caret-down" aria-hidden="true"></i
 ></button><div class="dropdown-content" id="menu-porto1" role="menu" aria-label="Portofolio 1"><a role="menuitem" href="#analisis-artefak" data-onclick="showPage('analisis-artefak');return false">Analisis Artefak</a><a role="menuitem" href="#penilaian" data-onclick="showPage('penilaian');return false">Penilaian GP &amp; DPL</a><a role="menuitem" href="#model" data-onclick="showPage('model');return false">Model Guru yang Dituju</a></div></li><li class="dropdown" id="dropdown-porto2"><button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-porto2" data-onclick="toggleDropdown('dropdown-porto2')"
 >Portofolio 2 <i class="fas fa-caret-down" aria-hidden="true"></i
 ></button><div class="dropdown-content" id="menu-porto2" role="menu" aria-label="Portofolio 2"><a role="menuitem" href="#refleksi-akhir" data-onclick="showPage('refleksi-akhir');return false">Refleksi Akhir</a><a role="menuitem" href="#filosofi-mengajar" data-onclick="showPage('filosofi-mengajar');return false">Filosofi Mengajar</a></div></li><li><a href="#beranda" data-onclick="backToBeranda();return false" id="nav-back-beranda"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Kembali ke Beranda</a></li></ul><ul class="nav-links" id="nav-links-seminar" data-navmode="seminar" hidden><li><a href="#identifikasi-diri" data-onclick="showPage('identifikasi-diri');return false" id="nav-identifikasi-diri">Identifikasi Diri</a></li><li class="dropdown" id="dropdown-refleksi"><button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-refleksi" data-onclick="toggleDropdown('dropdown-refleksi')"
 >Refleksi <i class="fas fa-caret-down" aria-hidden="true"></i
-></button><div class="dropdown-content" id="menu-refleksi" role="menu" aria-label="Refleksi"><a role="menuitem" href="#refleksi-sem1" data-onclick="showPage('refleksi-sem1');return false">Semester 1</a><a role="menuitem" href="#refleksi-sem2" data-onclick="showPage('refleksi-sem2');return false">Semester 2</a><a role="menuitem" href="#refleksi-selama-ppg" data-onclick="showPage('refleksi-selama-ppg');return false">Selama PPG</a></div></li><li><a href="#inovasi-pendidikan" data-onclick="showPage('inovasi-pendidikan');return false" id="nav-inovasi-pendidikan">Inovasi Pendidikan</a></li><li><a href="#beranda" data-onclick="backToBeranda();return false" id="nav-back-beranda-seminar"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Kembali ke Beranda</a></li></ul></nav><main id="main-content" tabindex="-1"><div id="page-beranda" class="page active"><section class="section canvas-wrap-section" id="hero-wrap-section"><canvas class="interactive-canvas" id="hero-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><div id="hero"><div class="hero-text"><p class="greeting">✦ Mahasiswa PPG Prajabatan 2025</p><h1>Halo, Saya<br /><span>Adam Prasetia</span></h1><p class="tagline">
-Berasal dari Lampung Utara, kini merantau ke kota istimewa untuk
-menempa diri menjadi seorang pendidik. Lahir di Jakarta,
-dibesarkan di tanah Lampung yang kaya budaya, dan kini
-mengabdikan ilmu informatika melalui Program Profesi Guru di
-Universitas Negeri Yogyakarta.
-</p><blockquote>
-"Mendidik bukan sekadar mentransfer pengetahuan, melainkan
-menyalakan api semangat belajar yang tak pernah padam dalam diri
-setiap murid."
-</blockquote><div class="hero-badges"><span class="badge"
-><i class="fas fa-map-marker-alt"></i> Jakarta → Lampung
-Utara</span
-><span class="badge"
-><i class="fas fa-laptop-code"></i> S1 Informatika</span
-><span class="badge"
-><i class="fas fa-chalkboard-teacher"></i> PPL 1 Selesai</span
-><span class="badge"
-><i class="fas fa-university"></i> PPG UNY 2025</span
-></div></div><div class="hero-photo-wrap"><div id="lanyard-3d" class="lanyard-3d" role="img" aria-label="ID Card Adam Prasetia — bisa ditarik dan diklik untuk dibalik"></div><div class="origin-tags"><div class="origin-tag"><i class="fas fa-plane-departure"></i> Lahir di Jakarta
+></button><div class="dropdown-content" id="menu-refleksi" role="menu" aria-label="Refleksi"><a role="menuitem" href="#refleksi-sem1" data-onclick="showPage('refleksi-sem1');return false">Semester 1</a><a role="menuitem" href="#refleksi-sem2" data-onclick="showPage('refleksi-sem2');return false">Semester 2</a><a role="menuitem" href="#refleksi-selama-ppg" data-onclick="showPage('refleksi-selama-ppg');return false">Selama PPG</a></div></li><li><a href="#inovasi-pendidikan" data-onclick="showPage('inovasi-pendidikan');return false" id="nav-inovasi-pendidikan">Inovasi Pendidikan</a></li><li><a href="#beranda" data-onclick="backToBeranda();return false" id="nav-back-beranda-seminar"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Kembali ke Beranda</a></li></ul></nav><main id="main-content" tabindex="-1"><div id="page-beranda" class="page active"><section class="section canvas-wrap-section" id="hero-wrap-section"><canvas class="interactive-canvas" id="hero-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><div id="hero"><div class="hero-text">
+  <p class="greeting">✦ Calon Pendidik Informatika <span aria-hidden="true">·</span> PPG UNY</p>
+  <h1 class="hero-headline">Mendidik dengan Visi,<br /><span>Berinovasi dengan Teknologi.</span></h1>
+  <div class="hero-identity">
+    <p class="hero-name">Adam Prasetia.</p>
+    <p class="hero-role">Sarjana Informatika <span aria-hidden="true">·</span> Calon Guru Profesional</p>
+  </div>
+  <p class="tagline">Berbekal keilmuan Informatika dan pengembangan kompetensi pedagogis melalui PPG, saya berkomitmen menghadirkan pembelajaran yang adaptif, kreatif, dan bermakna.</p>
+  <div class="hero-actions" aria-label="Navigasi portofolio">
+    <a class="hero-cta hero-cta-primary" href="#analisis-artefak" data-onclick="showPage('analisis-artefak');return false">
+      Jelajahi Portofolio <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+    </a>
+    <a class="hero-cta hero-cta-secondary" href="#profil-mahasiswa" data-onclick="showPage('profil-mahasiswa');return false">
+      <i class="fas fa-user" aria-hidden="true"></i> Profil Mahasiswa
+    </a>
+  </div>
+  <div class="hero-badges" aria-label="Ringkasan akademik">
+    <span class="badge"><i class="fas fa-laptop-code" aria-hidden="true"></i> S1 Informatika</span>
+    <span class="badge"><i class="fas fa-university" aria-hidden="true"></i> PPG UNY 2025</span>
+    <span class="badge"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> PPL 1 Selesai</span>
+  </div>
+  <blockquote class="hero-quote">“Mendidik bukan sekadar mentransfer pengetahuan, melainkan menyalakan api semangat belajar yang tak pernah padam dalam diri setiap murid.”</blockquote>
+</div><div class="hero-photo-wrap"><div class="lanyard-flow-space" aria-hidden="true"></div><div id="lanyard-3d" class="lanyard-3d" role="img" aria-label="ID Card Adam Prasetia — bisa ditarik dan diklik untuk dibalik"></div><div class="origin-tags"><div class="origin-tag"><i class="fas fa-plane-departure"></i> Lahir di Jakarta
 </div><div class="origin-tag"><i class="fas fa-home"></i> Lampung Utara
 </div></div></div></div></div></section><section class="section" style="background: var(--bg2)"><div class="container"><p class="section-label">Tanah Kelahiran Kedua</p><h2 class="section-title">Keunikan Lampung Utara</h2><p
 style="
@@ -140,7 +142,7 @@ class="form-textarea"
 placeholder="Tulis pesan Anda..."
 ></textarea></div><button class="btn-send" data-onclick="kirimPesan()"><i class="fas fa-paper-plane" style="margin-right: 8px"></i
 >Kirim Pesan
-</button></div></div></div></section></div><div id="page-profil-mahasiswa" class="page"><section class="section canvas-wrap-section" id="profil-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="profil-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Portofolio 1</p><h2 class="section-title">Profil Mahasiswa</h2><div class="section-divider"></div><div
+</button></div></div></div></section></div><div id="page-profil-mahasiswa" class="page"><section class="section canvas-wrap-section" id="profil-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="profil-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Profil Mahasiswa</p><h2 class="section-title">Profil Mahasiswa</h2><div class="section-divider"></div><div
 class="profil-intro"
 style="
 display: flex;
@@ -692,10 +694,173 @@ setiap murid bisa sukses dengan caranya sendiri.
 Dengan berpegang pada filosofi ini, saya berkomitmen untuk terus
 bertumbuh, beradaptasi, dan memberikan yang terbaik bagi dunia
 pendidikan Indonesia.
-</p></div></div></section></div><div id="page-semester-2" class="page"><section class="section" style="padding-top: 100px"><div class="container"><p class="section-label">Perkuliahan</p><h2 class="section-title">Semester 2</h2><div class="section-divider"></div><p style="max-width: 760px; margin: 0 auto; text-align: center">
-Dokumentasi kegiatan dan portofolio Semester 2 akan ditampilkan di
-halaman ini.
-</p></div></section></div><div id="page-identifikasi-diri" class="page"><section class="section canvas-wrap-section" id="identifikasi-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="identifikasi-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Seminar PPG</p><h2 class="section-title">Identifikasi Diri</h2><div class="section-divider"></div><div class="profil-intro" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 46px"><div class="profil-photo-area" style="flex-shrink: 0; display: flex; justify-content: center"><div class="photo-ring-wrapper"><div class="photo-circle"><img src="Profile2.png" alt="Foto Profil Adam Prasetia" / loading="lazy" decoding="async"></div><div class="rotating-bg"><img src="logo.png" alt="UNY" / loading="lazy" decoding="async"></div></div></div><div class="profil-desc" style="flex: 1; min-width: 280px"><h3 style="font-family: var(--serif); font-size: 26px; color: var(--gold); margin-bottom: 12px">Adam Prasetia</h3><p style="color: var(--muted); line-height: 1.8; font-size: 15px">
+</p></div></div></section></div><div id="page-semester-2" class="page">
+<section class="section ppl2-section ppl2-workspace-section" aria-labelledby="ppl2-title" style="padding-top: 100px">
+  <div class="container">
+    <header class="ppl2-header">
+      <p class="section-label">PPG UNY · PRAKTIK PENGALAMAN LAPANGAN 2</p>
+      <div class="ppl2-title-row">
+        <div>
+          <h1 class="ppl2-title" id="ppl2-title">E-Portfolio PPL 2</h1>
+          <p class="ppl2-subtitle">Dokumentasi Praktik dan Pengembangan Kompetensi Mengajar</p>
+        </div>
+        <span class="ppl2-context"><i class="fas fa-folder-open" aria-hidden="true"></i> Arsip Akademik Digital</span>
+      </div>
+      <div class="section-divider"></div>
+      <p class="ppl2-intro">
+        Kumpulan artefak, dokumentasi, dan analisis reflektif selama pelaksanaan PPL 2. Pilih E-Portfolio dan komponen yang ingin ditinjau untuk melihat ruang dokumen serta fokus analisisnya.
+      </p>
+    </header>
+
+    <div class="ppl2-portfolio-tabs" role="tablist" aria-label="Kelompok E-Portfolio">
+      <button class="ppl2-portfolio-tab is-active" id="ppl2-tab-portfolio-1" type="button" role="tab" aria-selected="true" aria-controls="ppl2-panel-portfolio-1" data-ppl2-tab="portfolio-1">
+        <span class="ppl2-tab-index">01</span><span class="ppl2-tab-copy"><strong>E-Portfolio 1</strong><small>Praktik Mengajar Mandiri</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </button>
+      <button class="ppl2-portfolio-tab" id="ppl2-tab-portfolio-2" type="button" role="tab" aria-selected="false" aria-controls="ppl2-panel-portfolio-2" data-ppl2-tab="portfolio-2">
+        <span class="ppl2-tab-index">02</span><span class="ppl2-tab-copy"><strong>E-Portfolio 2</strong><small>Produk terbaik siklus 2–4</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="ppl2-portfolio-panel" id="ppl2-panel-portfolio-1" role="tabpanel" aria-labelledby="ppl2-tab-portfolio-1" data-ppl2-portfolio-panel="portfolio-1">
+      <div class="ppl2-workspace">
+        <aside class="ppl2-sidebar" aria-label="Komponen E-Portfolio 1">
+          <div class="ppl2-sidebar-heading"><div><span class="ppl2-sidebar-eyebrow">DAFTAR KOMPONEN</span><h2>Praktik Mengajar Mandiri</h2></div><span class="ppl2-count">06</span></div>
+          <nav class="ppl2-section-nav" role="tablist" aria-orientation="vertical" aria-label="Komponen E-Portfolio 1">
+            <button class="ppl2-section-tab is-active" id="ppl2-section-tab-planning" type="button" role="tab" aria-selected="true" aria-controls="ppl2-content-planning" data-ppl2-section="planning"><span class="ppl2-section-number">01</span><span class="ppl2-section-label"><small>PERENCANAAN</small><strong>Rancangan Pembelajaran</strong></span><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <button class="ppl2-section-tab" id="ppl2-section-tab-material" type="button" role="tab" aria-selected="false" aria-controls="ppl2-content-material" data-ppl2-section="material"><span class="ppl2-section-number">02</span><span class="ppl2-section-label"><small>MATERI AJAR</small><strong>Materi Pembelajaran</strong></span><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <button class="ppl2-section-tab" id="ppl2-section-tab-media" type="button" role="tab" aria-selected="false" aria-controls="ppl2-content-media" data-ppl2-section="media"><span class="ppl2-section-number">03</span><span class="ppl2-section-label"><small>MEDIA PEMBELAJARAN</small><strong>Media Pembelajaran</strong></span><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <button class="ppl2-section-tab" id="ppl2-section-tab-video" type="button" role="tab" aria-selected="false" aria-controls="ppl2-content-video" data-ppl2-section="video"><span class="ppl2-section-number">04</span><span class="ppl2-section-label"><small>DOKUMENTASI VIDEO</small><strong>Video Praktik Mengajar</strong></span><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <button class="ppl2-section-tab" id="ppl2-section-tab-nonteaching" type="button" role="tab" aria-selected="false" aria-controls="ppl2-content-nonteaching" data-ppl2-section="nonteaching"><span class="ppl2-section-number">05</span><span class="ppl2-section-label"><small>PENGALAMAN SEKOLAH</small><strong>Kegiatan Nonmengajar</strong></span><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <button class="ppl2-section-tab" id="ppl2-section-tab-assessment" type="button" role="tab" aria-selected="false" aria-controls="ppl2-content-assessment" data-ppl2-section="assessment"><span class="ppl2-section-number">06</span><span class="ppl2-section-label"><small>ASESMEN</small><strong>Instrumen Penilaian</strong></span><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          </nav>
+          <div class="ppl2-sidebar-note"><i class="fas fa-info-circle" aria-hidden="true"></i><span>Pilih salah satu komponen untuk melihat dokumen dan kerangka analisis.</span></div>
+        </aside>
+
+        <div class="ppl2-detail-stage">
+          <article class="ppl2-content-panel is-active" id="ppl2-content-planning" role="tabpanel" aria-labelledby="ppl2-section-tab-planning" data-ppl2-content="planning">
+            <header class="ppl2-content-heading"><span class="ppl2-content-kicker">KOMPONEN 01 · PERENCANAAN</span><h2>Analisis Produk Rancangan Pembelajaran</h2><p>Analisis produk rancangan atau perencanaan pembelajaran yang disusun untuk praktik mengajar mandiri.</p></header>
+            <div class="ppl2-panel-grid">
+              <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Rancangan Pembelajaran" aria-label="Pratinjau dokumen rancangan pembelajaran"><div class="ppl2-card-heading"><span>RUANG DOKUMEN</span><i class="fas fa-expand-alt" aria-hidden="true"></i></div><div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="far fa-file-pdf" aria-hidden="true"></i></span><strong>Pratinjau dokumen</strong><p>Modul ajar, RPP, atau produk perencanaan pembelajaran akan ditampilkan di area ini.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Dokumen belum ditambahkan</span></div><div class="ppl2-preview-foot"><span>FORMAT DOKUMEN</span><strong>PDF · DOCX · PPTX</strong></div></section>
+              <section class="ppl2-analysis-card"><div class="ppl2-card-heading"><span>ARAH ANALISIS</span><i class="fas fa-microscope" aria-hidden="true"></i></div><p class="ppl2-analysis-lead">Tinjau kualitas rancangan dan kesesuaiannya dengan kebutuhan pembelajaran serta karakteristik peserta didik.</p><ul class="ppl2-analysis-list"><li>Keterkaitan tujuan pembelajaran, materi, aktivitas, dan asesmen.</li><li>Kesesuaian strategi dengan karakteristik serta kebutuhan peserta didik.</li><li>Kejelasan alur kegiatan, alokasi waktu, dan pengelolaan kelas.</li><li>Kekuatan rancangan, kendala, dan bagian yang perlu diperbaiki.</li></ul><div class="ppl2-analysis-note"><strong>Refleksi yang perlu dilengkapi</strong><span>Jelaskan alasan pemilihan rancangan, bagian yang berjalan efektif, serta revisi yang dilakukan atau direncanakan.</span></div></section>
+            </div>
+            <div class="ppl2-evidence-strip"><strong><i class="fas fa-paperclip" aria-hidden="true"></i> Bukti pendukung yang dapat disertakan</strong><div><span>Modul ajar / RPP</span><span>Tujuan pembelajaran</span><span>Rubrik atau lampiran</span></div></div>
+          </article>
+
+          <article class="ppl2-content-panel" id="ppl2-content-material" role="tabpanel" aria-labelledby="ppl2-section-tab-material" data-ppl2-content="material" hidden>
+            <header class="ppl2-content-heading"><span class="ppl2-content-kicker">KOMPONEN 02 · MATERI AJAR</span><h2>Analisis Materi Pembelajaran</h2><p>Analisis materi yang telah disusun dan diterapkan selama praktik mengajar mandiri.</p></header>
+            <div class="ppl2-panel-grid">
+              <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Materi Pembelajaran"><div class="ppl2-card-heading"><span>RUANG DOKUMEN</span><i class="fas fa-expand-alt" aria-hidden="true"></i></div><div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="far fa-file-alt" aria-hidden="true"></i></span><strong>Pratinjau materi</strong><p>Bahan ajar, slide presentasi, lembar materi, atau sumber belajar akan ditampilkan di area ini.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Materi belum ditambahkan</span></div><div class="ppl2-preview-foot"><span>FORMAT DOKUMEN</span><strong>PDF · DOCX · PPTX</strong></div></section>
+              <section class="ppl2-analysis-card"><div class="ppl2-card-heading"><span>ARAH ANALISIS</span><i class="fas fa-microscope" aria-hidden="true"></i></div><p class="ppl2-analysis-lead">Tinjau ketepatan isi dan bagaimana materi membantu peserta didik mencapai tujuan pembelajaran.</p><ul class="ppl2-analysis-list"><li>Akurasi konsep, kedalaman, dan keluasan materi.</li><li>Urutan penyajian serta keterkaitan antarkonsep.</li><li>Relevansi contoh dan konteks dengan kehidupan peserta didik.</li><li>Kejelasan bahasa, potensi miskonsepsi, dan respons peserta didik.</li></ul><div class="ppl2-analysis-note"><strong>Refleksi yang perlu dilengkapi</strong><span>Uraikan bagian materi yang paling mendukung belajar, bagian yang sulit dipahami, dan penyesuaian yang diperlukan.</span></div></section>
+            </div>
+            <div class="ppl2-evidence-strip"><strong><i class="fas fa-paperclip" aria-hidden="true"></i> Bukti pendukung yang dapat disertakan</strong><div><span>Bahan ajar</span><span>Slide presentasi</span><span>Lembar kerja / sumber belajar</span></div></div>
+          </article>
+
+          <article class="ppl2-content-panel" id="ppl2-content-media" role="tabpanel" aria-labelledby="ppl2-section-tab-media" data-ppl2-content="media" hidden>
+            <header class="ppl2-content-heading"><span class="ppl2-content-kicker">KOMPONEN 03 · MEDIA PEMBELAJARAN</span><h2>Analisis Media Pembelajaran</h2><p>Analisis media yang digunakan untuk mendukung proses praktik mengajar mandiri.</p></header>
+            <div class="ppl2-panel-grid">
+              <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Media Pembelajaran"><div class="ppl2-card-heading"><span>RUANG MEDIA</span><i class="fas fa-expand-alt" aria-hidden="true"></i></div><div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="fas fa-photo-video" aria-hidden="true"></i></span><strong>Pratinjau media</strong><p>Tangkapan layar, tautan media digital, presentasi, atau dokumentasi alat peraga akan ditampilkan di area ini.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Media belum ditambahkan</span></div><div class="ppl2-preview-foot"><span>BUKTI MEDIA</span><strong>LINK · IMAGE · FILE</strong></div></section>
+              <section class="ppl2-analysis-card"><div class="ppl2-card-heading"><span>ARAH ANALISIS</span><i class="fas fa-microscope" aria-hidden="true"></i></div><p class="ppl2-analysis-lead">Jelaskan alasan pemilihan media dan evaluasi kontribusinya terhadap proses belajar.</p><ul class="ppl2-analysis-list"><li>Kesesuaian media dengan tujuan, materi, dan karakteristik peserta didik.</li><li>Kemudahan penggunaan, keterbacaan, aksesibilitas, dan daya tarik.</li><li>Interaksi yang difasilitasi media serta keterlibatan peserta didik.</li><li>Kendala teknis dan alternatif jika media tidak dapat digunakan.</li></ul><div class="ppl2-analysis-note"><strong>Refleksi yang perlu dilengkapi</strong><span>Jelaskan bagaimana media digunakan, respons peserta didik, dan dampaknya terhadap pemahaman materi.</span></div></section>
+            </div>
+            <div class="ppl2-evidence-strip"><strong><i class="fas fa-paperclip" aria-hidden="true"></i> Bukti pendukung yang dapat disertakan</strong><div><span>Tautan media</span><span>Tangkapan layar</span><span>Petunjuk penggunaan</span></div></div>
+          </article>
+
+          <article class="ppl2-content-panel" id="ppl2-content-video" role="tabpanel" aria-labelledby="ppl2-section-tab-video" data-ppl2-content="video" hidden>
+            <header class="ppl2-content-heading"><span class="ppl2-content-kicker">KOMPONEN 04 · DOKUMENTASI VIDEO</span><h2>Analisis Video Praktik Mengajar</h2><p>Analisis pelaksanaan praktik mengajar mandiri berdasarkan rekaman video.</p></header>
+            <div class="ppl2-panel-grid">
+              <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Video Praktik Mengajar"><div class="ppl2-card-heading"><span>RUANG VIDEO</span><i class="fas fa-expand-alt" aria-hidden="true"></i></div><div class="ppl2-empty-preview ppl2-video-empty"><span class="ppl2-file-icon"><i class="fas fa-play-circle" aria-hidden="true"></i></span><strong>Pratinjau video praktik</strong><p>Video praktik mengajar atau tautan rekaman yang dapat diakses akan ditampilkan di area ini.</p><span class="ppl2-status"><i class="fas fa-video" aria-hidden="true"></i> Video belum ditambahkan</span></div><div class="ppl2-preview-foot"><span>SUMBER VIDEO</span><strong>MP4 · YOUTUBE · DRIVE</strong></div></section>
+              <section class="ppl2-analysis-card"><div class="ppl2-card-heading"><span>ARAH ANALISIS</span><i class="fas fa-microscope" aria-hidden="true"></i></div><p class="ppl2-analysis-lead">Gunakan rekaman praktik sebagai dasar refleksi terhadap keputusan dan tindakan pembelajaran yang terlihat.</p><ul class="ppl2-analysis-list"><li>Alur pembukaan, kegiatan inti, dan penutup.</li><li>Kejelasan instruksi, komunikasi, pertanyaan, dan umpan balik.</li><li>Pengelolaan kelas serta keterlibatan peserta didik.</li><li>Momen efektif dan bagian yang perlu ditingkatkan, disertai penanda waktu video.</li></ul><div class="ppl2-analysis-note"><strong>Refleksi yang perlu dilengkapi</strong><span>Catat bukti perilaku mengajar berdasarkan timestamp, bukan hanya kesan umum setelah menonton.</span></div></section>
+            </div>
+            <div class="ppl2-evidence-strip"><strong><i class="fas fa-paperclip" aria-hidden="true"></i> Informasi pendukung yang dapat disertakan</strong><div><span>Tautan video</span><span>Identitas pertemuan</span><span>Catatan timestamp</span></div></div>
+          </article>
+
+          <article class="ppl2-content-panel" id="ppl2-content-nonteaching" role="tabpanel" aria-labelledby="ppl2-section-tab-nonteaching" data-ppl2-content="nonteaching" hidden>
+            <header class="ppl2-content-heading"><span class="ppl2-content-kicker">KOMPONEN 05 · PENGALAMAN SEKOLAH</span><h2>Analisis Kegiatan Nonmengajar</h2><p>Dokumentasi pengalaman dan kontribusi dalam kegiatan sekolah di luar kegiatan mengajar.</p></header>
+            <div class="ppl2-panel-grid">
+              <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Kegiatan Nonmengajar"><div class="ppl2-card-heading"><span>RUANG DOKUMENTASI</span><i class="fas fa-expand-alt" aria-hidden="true"></i></div><div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="far fa-images" aria-hidden="true"></i></span><strong>Galeri kegiatan</strong><p>Foto, keterangan kegiatan, atau dokumen pendukung kegiatan nonmengajar akan ditampilkan di area ini.</p><span class="ppl2-status"><i class="fas fa-images" aria-hidden="true"></i> Dokumentasi belum ditambahkan</span></div><div class="ppl2-preview-foot"><span>FORMAT BUKTI</span><strong>JPG · PNG · PDF</strong></div></section>
+              <section class="ppl2-analysis-card"><div class="ppl2-card-heading"><span>ARAH ANALISIS</span><i class="fas fa-microscope" aria-hidden="true"></i></div><p class="ppl2-analysis-lead">Dokumentasikan keterlibatan dalam kegiatan nonmengajar dan refleksikan pembelajaran profesional yang diperoleh.</p><ul class="ppl2-analysis-list"><li>Tujuan dan konteks kegiatan yang diikuti.</li><li>Peran, tanggung jawab, dan bentuk kontribusi.</li><li>Koordinasi dengan guru, tenaga kependidikan, peserta didik, atau warga sekolah.</li><li>Pengalaman, tantangan, dan relevansinya terhadap kompetensi pendidik.</li></ul><div class="ppl2-analysis-note"><strong>Refleksi yang perlu dilengkapi</strong><span>Hubungkan pengalaman kegiatan dengan kompetensi sosial, kepribadian, dan profesional pendidik.</span></div></section>
+            </div>
+            <div class="ppl2-evidence-strip"><strong><i class="fas fa-paperclip" aria-hidden="true"></i> Bukti pendukung yang dapat disertakan</strong><div><span>Foto kegiatan</span><span>Deskripsi peran</span><span>Surat tugas / produk</span></div></div>
+          </article>
+
+          <article class="ppl2-content-panel" id="ppl2-content-assessment" role="tabpanel" aria-labelledby="ppl2-section-tab-assessment" data-ppl2-content="assessment" hidden>
+            <header class="ppl2-content-heading"><span class="ppl2-content-kicker">KOMPONEN 06 · ASESMEN</span><h2>Instrumen Penilaian dan Analisisnya</h2><p>Instrumen penilaian yang dirancang beserta analisis penggunaan dan kesesuaiannya.</p></header>
+            <div class="ppl2-panel-grid">
+              <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Instrumen Penilaian"><div class="ppl2-card-heading"><span>RUANG INSTRUMEN</span><i class="fas fa-expand-alt" aria-hidden="true"></i></div><div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></span><strong>Pratinjau instrumen</strong><p>Kisi-kisi, lembar penilaian, rubrik, dan pedoman penskoran akan ditampilkan di area ini.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Instrumen belum ditambahkan</span></div><div class="ppl2-preview-foot"><span>FORMAT DOKUMEN</span><strong>PDF · DOCX · XLSX</strong></div></section>
+              <section class="ppl2-analysis-card"><div class="ppl2-card-heading"><span>ARAH ANALISIS</span><i class="fas fa-microscope" aria-hidden="true"></i></div><p class="ppl2-analysis-lead">Tunjukkan bagaimana instrumen dirancang untuk memperoleh informasi tentang ketercapaian tujuan pembelajaran.</p><ul class="ppl2-analysis-list"><li>Kesesuaian indikator, bentuk asesmen, dan tujuan pembelajaran.</li><li>Kejelasan butir, kriteria, rubrik, serta pedoman penskoran.</li><li>Keterukuran, keadilan, dan kemudahan penerapan instrumen.</li><li>Interpretasi hasil yang tersedia dan tindak lanjut pembelajaran.</li></ul><div class="ppl2-analysis-note"><strong>Refleksi yang perlu dilengkapi</strong><span>Analisis kekuatan dan keterbatasan instrumen serta bagaimana hasilnya digunakan untuk tindak lanjut.</span></div></section>
+            </div>
+            <div class="ppl2-evidence-strip"><strong><i class="fas fa-paperclip" aria-hidden="true"></i> Bukti pendukung yang dapat disertakan</strong><div><span>Kisi-kisi</span><span>Rubrik</span><span>Hasil penilaian / analisis</span></div></div>
+          </article>
+
+          <div class="ppl2-workspace-footnote"><i class="fas fa-lightbulb" aria-hidden="true"></i><p>Pratinjau akan menampilkan artefak setelah dokumen atau tautannya ditambahkan. Isi analisis akhir dilengkapi berdasarkan bukti dan pengalaman praktik yang sebenarnya.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ppl2-portfolio-panel ppl2-portfolio-two" id="ppl2-panel-portfolio-2" role="tabpanel" aria-labelledby="ppl2-tab-portfolio-2" data-ppl2-portfolio-panel="portfolio-2" hidden>
+      <div class="ppl2-eportfolio2-intro">
+        <span class="ppl2-content-kicker">PPL 2 · PRODUK TERBAIK PRAKTIK MENGAJAR MANDIRI</span>
+        <h2>E-Portfolio 2</h2>
+        <p>E-Portfolio ini memuat produk terbaik dari praktik mengajar mandiri siklus 2 sampai dengan siklus 4, beserta video pelaksanaan pembelajaran dari rancangan yang dipilih.</p>
+      </div>
+      <div class="ppl2-cycle-switch" role="tablist" aria-label="Pilih siklus praktik mengajar mandiri">
+        <button class="ppl2-cycle-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="ppl2-cycle-panel-2" data-ppl2-cycle="2"><span>Siklus</span><strong>2</strong></button>
+        <button class="ppl2-cycle-tab" type="button" role="tab" aria-selected="false" aria-controls="ppl2-cycle-panel-3" data-ppl2-cycle="3"><span>Siklus</span><strong>3</strong></button>
+        <button class="ppl2-cycle-tab" type="button" role="tab" aria-selected="false" aria-controls="ppl2-cycle-panel-4" data-ppl2-cycle="4"><span>Siklus</span><strong>4</strong></button>
+      </div>
+      <div class="ppl2-cycle-panels">
+        <div class="ppl2-cycle-panel" id="ppl2-cycle-panel-2" role="tabpanel" data-ppl2-cycle-panel="2">
+          <div class="ppl2-cycle-heading"><span>PORTOFOLIO PRAKTIK MENGAJAR MANDIRI</span><h3>Dokumentasi Siklus 2</h3><p>Pilih dan tampilkan produk terbaik dari siklus 2. Rancangan pembelajaran dan video pelaksanaannya harus berasal dari praktik mengajar yang sama.</p></div>
+          <div class="ppl2-panel-grid ppl2-eportfolio2-grid">
+            <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Rancangan Pembelajaran Siklus 2" aria-label="Pratinjau rancangan pembelajaran siklus 2">
+              <div class="ppl2-card-heading"><span>PRODUK 01 · DOKUMEN PERENCANAAN</span><i class="far fa-file-pdf" aria-hidden="true"></i></div>
+              <div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="far fa-file-pdf" aria-hidden="true"></i></span><strong>Rancangan/Perencanaan Pembelajaran</strong><p>Tambahkan dokumen lengkap rancangan atau perencanaan pembelajaran praktik mengajar mandiri siklus 2.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Dokumen siklus 2 belum ditambahkan</span></div>
+              <div class="ppl2-preview-foot"><span>RANCANGAN SIKLUS 2</span><strong>PDF</strong></div>
+            </section>
+            <section class="ppl2-preview-card ppl2-video-preview" data-video-src="" aria-label="Pratinjau video praktik mengajar mandiri siklus 2">
+              <div class="ppl2-card-heading"><span>PRODUK 02 · DOKUMENTASI VIDEO</span><i class="fas fa-play-circle" aria-hidden="true"></i></div>
+              <div class="ppl2-video-placeholder"><span class="ppl2-file-icon"><i class="fas fa-video" aria-hidden="true"></i></span><strong>Video Pelaksanaan Praktik Mengajar Mandiri</strong><p>Tambahkan video pelaksanaan pembelajaran berdasarkan rancangan siklus 2 yang ditampilkan di sebelah kiri.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Video siklus 2 belum ditambahkan</span></div>
+              <div class="ppl2-preview-foot"><span>VIDEO SIKLUS 2</span><strong>MP4 · YOUTUBE</strong></div>
+            </section>
+          </div>
+        </div>
+        <div class="ppl2-cycle-panel" id="ppl2-cycle-panel-3" role="tabpanel" data-ppl2-cycle-panel="3" hidden>
+          <div class="ppl2-cycle-heading"><span>PORTOFOLIO PRAKTIK MENGAJAR MANDIRI</span><h3>Dokumentasi Siklus 3</h3><p>Pilih dan tampilkan produk terbaik dari siklus 3. Rancangan pembelajaran dan video pelaksanaannya harus berasal dari praktik mengajar yang sama.</p></div>
+          <div class="ppl2-panel-grid ppl2-eportfolio2-grid">
+            <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Rancangan Pembelajaran Siklus 3" aria-label="Pratinjau rancangan pembelajaran siklus 3">
+              <div class="ppl2-card-heading"><span>PRODUK 01 · DOKUMEN PERENCANAAN</span><i class="far fa-file-pdf" aria-hidden="true"></i></div>
+              <div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="far fa-file-pdf" aria-hidden="true"></i></span><strong>Rancangan/Perencanaan Pembelajaran</strong><p>Tambahkan dokumen lengkap rancangan atau perencanaan pembelajaran praktik mengajar mandiri siklus 3.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Dokumen siklus 3 belum ditambahkan</span></div>
+              <div class="ppl2-preview-foot"><span>RANCANGAN SIKLUS 3</span><strong>PDF</strong></div>
+            </section>
+            <section class="ppl2-preview-card ppl2-video-preview" data-video-src="" aria-label="Pratinjau video praktik mengajar mandiri siklus 3">
+              <div class="ppl2-card-heading"><span>PRODUK 02 · DOKUMENTASI VIDEO</span><i class="fas fa-play-circle" aria-hidden="true"></i></div>
+              <div class="ppl2-video-placeholder"><span class="ppl2-file-icon"><i class="fas fa-video" aria-hidden="true"></i></span><strong>Video Pelaksanaan Praktik Mengajar Mandiri</strong><p>Tambahkan video pelaksanaan pembelajaran berdasarkan rancangan siklus 3 yang ditampilkan di sebelah kiri.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Video siklus 3 belum ditambahkan</span></div>
+              <div class="ppl2-preview-foot"><span>VIDEO SIKLUS 3</span><strong>MP4 · YOUTUBE</strong></div>
+            </section>
+          </div>
+        </div>
+        <div class="ppl2-cycle-panel" id="ppl2-cycle-panel-4" role="tabpanel" data-ppl2-cycle-panel="4" hidden>
+          <div class="ppl2-cycle-heading"><span>PORTOFOLIO PRAKTIK MENGAJAR MANDIRI</span><h3>Dokumentasi Siklus 4</h3><p>Pilih dan tampilkan produk terbaik dari siklus 4. Rancangan pembelajaran dan video pelaksanaannya harus berasal dari praktik mengajar yang sama.</p></div>
+          <div class="ppl2-panel-grid ppl2-eportfolio2-grid">
+            <section class="ppl2-preview-card" data-pdf-src="" data-pdf-title="Rancangan Pembelajaran Siklus 4" aria-label="Pratinjau rancangan pembelajaran siklus 4">
+              <div class="ppl2-card-heading"><span>PRODUK 01 · DOKUMEN PERENCANAAN</span><i class="far fa-file-pdf" aria-hidden="true"></i></div>
+              <div class="ppl2-empty-preview"><span class="ppl2-file-icon"><i class="far fa-file-pdf" aria-hidden="true"></i></span><strong>Rancangan/Perencanaan Pembelajaran</strong><p>Tambahkan dokumen lengkap rancangan atau perencanaan pembelajaran praktik mengajar mandiri siklus 4.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Dokumen siklus 4 belum ditambahkan</span></div>
+              <div class="ppl2-preview-foot"><span>RANCANGAN SIKLUS 4</span><strong>PDF</strong></div>
+            </section>
+            <section class="ppl2-preview-card ppl2-video-preview" data-video-src="" aria-label="Pratinjau video praktik mengajar mandiri siklus 4">
+              <div class="ppl2-card-heading"><span>PRODUK 02 · DOKUMENTASI VIDEO</span><i class="fas fa-play-circle" aria-hidden="true"></i></div>
+              <div class="ppl2-video-placeholder"><span class="ppl2-file-icon"><i class="fas fa-video" aria-hidden="true"></i></span><strong>Video Pelaksanaan Praktik Mengajar Mandiri</strong><p>Tambahkan video pelaksanaan pembelajaran berdasarkan rancangan siklus 4 yang ditampilkan di sebelah kiri.</p><span class="ppl2-status"><i class="fas fa-folder-open" aria-hidden="true"></i> Video siklus 4 belum ditambahkan</span></div>
+              <div class="ppl2-preview-foot"><span>VIDEO SIKLUS 4</span><strong>MP4 · YOUTUBE</strong></div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="ppl2-evidence-strip ppl2-eportfolio2-note"><strong><i class="fas fa-clipboard-check" aria-hidden="true"></i> Ketentuan isi E-Portfolio 2</strong><div><span>Rancangan lengkap terbaik siklus 2–4</span><span>Video pelaksanaan dari rancangan yang sama</span><span>Konsistensi antara perencanaan dan pelaksanaan</span></div></div>
+    </div>
+
+    <div class="ppl2-back-wrap"><a class="ppl2-back-link" href="#beranda" data-onclick="showPage('beranda');return false"><i class="fas fa-arrow-left" aria-hidden="true"></i> Kembali ke Beranda</a></div>
+  </div>
+</section>
+</div><div id="page-identifikasi-diri" class="page"><section class="section canvas-wrap-section" id="identifikasi-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="identifikasi-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Seminar PPG</p><h2 class="section-title">Identifikasi Diri</h2><div class="section-divider"></div><div class="profil-intro" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 46px"><div class="profil-photo-area" style="flex-shrink: 0; display: flex; justify-content: center"><div class="photo-ring-wrapper"><div class="photo-circle"><img src="Profile2.png" alt="Foto Profil Adam Prasetia" / loading="lazy" decoding="async"></div><div class="rotating-bg"><img src="logo.png" alt="UNY" / loading="lazy" decoding="async"></div></div></div><div class="profil-desc" style="flex: 1; min-width: 280px"><h3 style="font-family: var(--serif); font-size: 26px; color: var(--gold); margin-bottom: 12px">Adam Prasetia</h3><p style="color: var(--muted); line-height: 1.8; font-size: 15px">
 Mahasiswa PPG Prajabatan Bidang Studi Informatika, Universitas Negeri
 Yogyakarta. Lahir di Jakarta, besar di Lampung Utara, dan menempuh studi
 S1 Informatika di Universitas Teknokrat Indonesia sebelum melanjutkan
@@ -759,7 +924,186 @@ Berikut refleksi saya pada setiap mata kuliah beserta artefak pembelajaran yang 
 </h3><p style="color: var(--muted); line-height: 1.9; margin-bottom: 18px">Melalui mata kuliah ini saya memahami bahwa kepemimpinan tidak selalu berarti jabatan. Guru memimpin ketika ia melihat masalah di sekitarnya, mengajak orang lain bergerak, dan berani mengambil inisiatif demi kebaikan murid dan sekolah. Saya berlatih mengidentifikasi persoalan nyata, merancang langkah perbaikan, berkolaborasi dengan rekan, serta bertanggung jawab atas hasilnya. Pengalaman ini menumbuhkan keyakinan bahwa perubahan kecil yang dimulai dari kelas dapat berdampak lebih luas.</p><h4 style="font-family: var(--serif); font-size: 16px; color: var(--gold); margin-bottom: 12px"><i class="fas fa-paperclip" style="margin-right: 8px"></i>Artefak &amp; Refleksi
 </h4><div class="doc-preview-grid"><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/artefak2/pk1.pdf', 'Artefak')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/artefak2/pk1.pdf','Artefak')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-paperclip"></i> Artefak</h3><p>Bukti karya dan dokumen pendukung mata kuliah Projek Kepemimpinan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Artefak</span></div><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/pk.pdf', 'Refleksi')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/pk.pdf','Refleksi')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-pen-nib"></i> Refleksi</h3><p>Tulisan refleksi pembelajaran mata kuliah Projek Kepemimpinan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Refleksi</span></div></div></article><article class="profil-section-block" style="margin-bottom: 46px"><h3 style="font-family: var(--serif); font-size: 21px; color: var(--gold2); margin-bottom: 14px"><i class="fas fa-route" style="margin-right: 10px"></i>5. Refleksi Mata Kuliah Pengembangan Keprofesian Berkelanjutan
 </h3><p style="color: var(--muted); line-height: 1.9; margin-bottom: 18px">Mata kuliah ini menegaskan bahwa menjadi guru profesional bukan tujuan yang selesai saat lulus PPG, melainkan perjalanan yang terus berlanjut. Saya belajar memetakan kekuatan dan area yang perlu dikembangkan, menyusun rencana pengembangan diri, dan memanfaatkan komunitas belajar serta praktik refleksi sebagai sumber pertumbuhan. Dari sini saya berkomitmen untuk terus belajar, berbagi praktik baik dengan rekan sejawat, dan menjaga semangat berkembang sepanjang karier mengajar.</p><h4 style="font-family: var(--serif); font-size: 16px; color: var(--gold); margin-bottom: 12px"><i class="fas fa-paperclip" style="margin-right: 8px"></i>Artefak &amp; Refleksi
-</h4><div class="doc-preview-grid"><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/artefak2/pkb1.pdf', 'Artefak 1')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/artefak2/pkb1.pdf','Artefak 1')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-paperclip"></i> Artefak 1</h3><p>Bukti karya dan dokumen pendukung mata kuliah Pengembangan Keprofesian Berkelanjutan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Artefak</span></div><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/artefak2/pkb2.pdf', 'Artefak 2')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/artefak2/pkb2.pdf','Artefak 2')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-paperclip"></i> Artefak 2</h3><p>Bukti karya dan dokumen pendukung mata kuliah Pengembangan Keprofesian Berkelanjutan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Artefak</span></div><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/pkb.pdf', 'Refleksi')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/pkb.pdf','Refleksi')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-pen-nib"></i> Refleksi</h3><p>Tulisan refleksi pembelajaran mata kuliah Pengembangan Keprofesian Berkelanjutan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Refleksi</span></div></div></article></div></section></div><div id="page-refleksi-selama-ppg" class="page"><section class="section canvas-wrap-section" id="refleksi-selama-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="refleksi-selama-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Seminar PPG · Refleksi</p><h2 class="section-title">Refleksi Selama PPG</h2><div class="section-divider"></div><div class="soon-card" role="status"><div class="soon-orbit" aria-hidden="true"><span class="soon-ring"></span><span class="soon-ring soon-ring-2"></span><span class="soon-icon"><i class="fas fa-feather-pointed"></i></span><span class="soon-dot soon-dot-1"></span><span class="soon-dot soon-dot-2"></span><span class="soon-dot soon-dot-3"></span></div><span class="soon-badge"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Sedang Disusun</span><h3 class="soon-title">Perjalanan Ini Sedang Dirangkai Menjadi Cerita</h3><p class="soon-desc">Setiap tantangan, jatuh bangun, dan titik balik selama PPG sedang diramu menjadi refleksi yang utuh dan bermakna. Halaman ini akan segera terisi dengan kisah proses bertumbuh saya menjadi guru.</p><div class="soon-bar" aria-hidden="true"><span></span></div><div class="soon-chips"><span class="soon-chip"><i class="fas fa-route" aria-hidden="true"></i>Perjalanan Belajar</span><span class="soon-chip"><i class="fas fa-compass" aria-hidden="true"></i>Titik Balik</span><span class="soon-chip"><i class="fas fa-gem" aria-hidden="true"></i>Pelajaran Berharga</span></div><p class="soon-quote">“Guru yang baik tidak berhenti belajar—ia merefleksikan, lalu melangkah lebih jauh.”</p></div></div></section></div><div id="page-inovasi-pendidikan" class="page"><section class="section canvas-wrap-section" id="inovasi-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="inovasi-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Seminar PPG · Inovasi</p><h2 class="section-title">Inovasi Pendidikan</h2><div class="section-divider"></div><div class="soon-card" role="status"><div class="soon-orbit" aria-hidden="true"><span class="soon-ring"></span><span class="soon-ring soon-ring-2"></span><span class="soon-icon"><i class="fas fa-lightbulb"></i></span><span class="soon-dot soon-dot-1"></span><span class="soon-dot soon-dot-2"></span><span class="soon-dot soon-dot-3"></span></div><span class="soon-badge"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Sedang Dibuat</span><h3 class="soon-title">Ruang Kelas Masa Depan Sedang Dirakit</h3><p class="soon-desc">Gagasan-gagasan segar untuk membuat belajar lebih hidup, relevan, dan berpihak pada murid sedang diracik dengan teliti. Nantikan karya inovasi yang akan tampil di sini.</p><div class="soon-bar" aria-hidden="true"><span></span></div><div class="soon-chips"><span class="soon-chip"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>Gagasan Kreatif</span><span class="soon-chip"><i class="fas fa-laptop-code" aria-hidden="true"></i>Teknologi untuk Belajar</span><span class="soon-chip"><i class="fas fa-seedling" aria-hidden="true"></i>Dampak bagi Murid</span></div><p class="soon-quote">“Inovasi bukan soal yang paling canggih, melainkan yang paling bermakna bagi murid.”</p></div></div></section></div><div id="page-about" class="page"><section class="section canvas-wrap-section" id="about-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="about-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Informasi</p><h2 class="section-title">Tentang E‑Portofolio Ini</h2><div class="section-divider"></div><div
+</h4><div class="doc-preview-grid"><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/artefak2/pkb1.pdf', 'Artefak 1')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/artefak2/pkb1.pdf','Artefak 1')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-paperclip"></i> Artefak 1</h3><p>Bukti karya dan dokumen pendukung mata kuliah Pengembangan Keprofesian Berkelanjutan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Artefak</span></div><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/artefak2/pkb2.pdf', 'Artefak 2')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/artefak2/pkb2.pdf','Artefak 2')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-paperclip"></i> Artefak 2</h3><p>Bukti karya dan dokumen pendukung mata kuliah Pengembangan Keprofesian Berkelanjutan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Artefak</span></div><div class="doc-preview-card" data-onclick="openPDF('docs/smt2/pkb.pdf', 'Refleksi')" role="button" tabindex="0" data-onkeydown="if(event.key==='Enter'){openPDF('docs/smt2/pkb.pdf','Refleksi')}"><div class="doc-preview-thumb"><div class="doc-preview-thumb-fallback pdf-cover"><svg aria-hidden="true" width="38" height="48" viewBox="0 0 384 512" fill="currentColor" style="display:block"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160 16c4.4 0 8 3.6 8 8v136c0 13.3 10.7 24 24 24h136c4.4 0 8 3.6 8 8V464H48zm204.1-49.8c-4.5-13.6-15.6-20.8-28.8-20.8 -7.6 0-13.8 1.7-17.8 5.2 -3.1 2.7-4.7 6.3-4.7 10.7v18.3c0 4.3 1.5 7.8 4.7 10.7 4 3.5 10.2 5.2 17.8 5.2 13.2 0 24.3-7.2 28.8-20.8 1.7-5.3 2.6-11.6 2.6-18.7v-4.3C254.7 325.6 253.8 319.3 252.1 314zm-34.9 23.3c0 5.1-.6 9.3-1.8 12.8 -2 6-6.9 9.2-13.4 9.2 -3.4 0-5.9-.7-7.6-2.2 -1.7-1.4-2.5-3.3-2.5-5.5v-18.3c0-2.2 .8-4.1 2.5-5.5 1.7-1.4 4.2-2.2 7.6-2.2 6.5 0 11.4 3.2 13.4 9.2 1.2 3.4 1.8 7.7 1.8 12.8v4.3zM312 320h-22.6v58.3h-13.2V320h-22.6v-12.5h58.4V320z"/></svg><span class="pdf-label">PDF</span></div></div><div class="doc-preview-body"><h3><i class="fas fa-pen-nib"></i> Refleksi</h3><p>Tulisan refleksi pembelajaran mata kuliah Pengembangan Keprofesian Berkelanjutan</p><span class="doc-preview-open"><i class="fas fa-expand"></i> Lihat dokumen</span></div><span class="rpp-badge">Refleksi</span></div></div></article></div></section></div><div class="page" id="page-refleksi-selama-ppg">
+<section class="section canvas-wrap-section seminar-reflection-section" id="refleksi-selama-wrap-section" style="padding-top: 100px">
+<canvas aria-hidden="true" class="interactive-canvas" id="refleksi-selama-canvas"></canvas>
+<div class="container seminar-reflection-container" style="position: relative; z-index: 1">
+<p class="section-label">Seminar PPG · Refleksi Pengalaman Belajar</p>
+<h2 class="section-title">Refleksi Selama PPG</h2>
+<div class="section-divider"></div>
+<p class="seminar-reflection-lead">Rangkaian pengalaman belajar selama mengikuti Program Pendidikan Profesi Guru menjadi ruang untuk meninjau kembali cara pandang saya tentang pendidikan, memaknai profesionalisme guru, dan menetapkan langkah nyata saat memulai karir sebagai pendidik.</p>
+<div class="seminar-reflection-overview">
+<article class="seminar-reflection-card seminar-reflection-card-feature">
+<div class="seminar-reflection-card-icon"><i aria-hidden="true" class="fas fa-seedling"></i></div>
+<span class="seminar-reflection-kicker">REFLEKSI 01</span>
+<h3>Bagaimana Seharusnya Pendidikan di Indonesia?</h3>
+<p>Pendidikan seharusnya tidak berfokus pada penyeragaman kemampuan, melainkan menjadi proses <strong>menuntun kodrat anak sesuai konteks alam dan zamannya</strong>, sejalan dengan pemikiran Ki Hadjar Dewantara. Pendidikan yang memerdekakan dimulai dari empati dan pemahaman utuh terhadap latar belakang murid.</p>
+<p>Pembelajaran perlu bermakna, berkesadaran, dan menggembirakan. Teknologi seperti AI dan Canva menjadi jembatan pemerataan akses, bukan alat penyeragaman. Murid juga perlu dibekali kompetensi abad ke-21 melalui pembelajaran berdiferensiasi, asesmen autentik, dan <em>growth mindset</em> yang memandang kesalahan sebagai bagian dari proses belajar.</p>
+</article>
+<article class="seminar-reflection-card">
+<div class="seminar-reflection-card-icon"><i aria-hidden="true" class="fas fa-chalkboard-teacher"></i></div>
+<span class="seminar-reflection-kicker">REFLEKSI 02</span>
+<h3>Komitmen Menjadi Guru Profesional</h3>
+<p>Saya berkomitmen menjadi <strong>pembelajar sepanjang hayat</strong> dan mengubah paradigma mengajar menjadi pembelajaran berbasis data melalui asesmen diagnostik serta pemetaan karakteristik peserta didik, termasuk pendekatan TaRL dan CRT.</p>
+<p>Saya akan terus merancang pembelajaran inovatif dan kontekstual, seperti <em>experiential learning</em> dan <em>Problem Based Learning</em>, mengintegrasikan teknologi secara tepat guna, melakukan refleksi, mendokumentasikan praktik baik, menyusun PTK, serta berbagi ilmu sebagai pemimpin pembelajaran (<em>instructional leader</em>).</p>
+</article>
+</div>
+<div class="seminar-action-heading">
+<div><span class="seminar-reflection-kicker">LANGKAH NYATA</span><h3>Rencana Tindak Lanjut</h3></div>
+<p>Tiga hal penting yang akan saya lakukan ketika memulai karir sebagai guru.</p>
+</div>
+<div class="seminar-action-list">
+<article class="seminar-action-item">
+<span class="seminar-action-number">01</span>
+<div><h4>Mengenal murid secara utuh</h4><p>Sebelum merancang pembelajaran, saya akan mengenali murid dari aspek kognitif, sosial-emosional, maupun gaya belajarnya agar dapat menerapkan pembelajaran berdiferensiasi yang inklusif dan tepat sasaran.</p></div>
+</article>
+<article class="seminar-action-item">
+<span class="seminar-action-number">02</span>
+<div><h4>Membangun lingkungan belajar yang aman untuk mencoba</h4><p>Khususnya di laboratorium komputer/Informatika, saya akan membangun lingkungan yang bebas dari rasa takut gagal. Saya akan membiasakan ungkapan "belum berhasil", membahas <em>error/bug</em> sebagai bagian dari proses belajar, dan menggunakan media interaktif agar murid tidak mudah terdistraksi.</p></div>
+</article>
+<article class="seminar-action-item">
+<span class="seminar-action-number">03</span>
+<div><h4>Melakukan refleksi dan perbaikan berkelanjutan</h4><p>Setiap selesai mengajar, saya akan melakukan refleksi mandiri, menerima umpan balik dari guru pamong atau rekan, lalu mendokumentasikannya sebagai bahan perbaikan. Langkah ini menjadi bekal untuk mengembangkan diri, menulis artikel ilmiah atau PTK, serta berbagi praktik baik.</p></div>
+</article>
+</div>
+<section aria-labelledby="lk3-preview-title" class="seminar-document-section">
+<div class="seminar-document-heading">
+<div><span class="seminar-reflection-kicker">DOKUMEN PENDUKUNG</span><h3 id="lk3-preview-title">Lembar Kerja 3 (LK 3)</h3><p>Refleksi Pengalaman Belajar Selama Mengikuti PPG</p></div>
+<div class="seminar-document-actions">
+<a class="seminar-document-button seminar-document-button-primary" href="docs/seminar/LEMBAR-KERJA-3-LK-3.pdf" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fas fa-up-right-from-square"></i> Buka PDF</a>
+<a class="seminar-document-button" download="" href="docs/seminar/LEMBAR-KERJA-3-LK-3.docx"><i aria-hidden="true" class="fas fa-file-word"></i> Unduh DOCX</a>
+</div>
+</div>
+<div class="seminar-pdf-frame-wrap">
+<iframe class="seminar-pdf-frame" loading="lazy" src="docs/seminar/LEMBAR-KERJA-3-LK-3.pdf#toolbar=1&amp;navpanes=0&amp;view=FitH" title="Pratinjau Lembar Kerja 3 - Refleksi Pengalaman Belajar Selama Mengikuti PPG"></iframe>
+</div>
+<p class="seminar-document-note"><i aria-hidden="true" class="fas fa-circle-info"></i> Pratinjau menampilkan dokumen PDF hasil konversi agar dapat dibaca langsung di halaman ini. File Word asli tetap tersedia melalui tombol Unduh DOCX.</p>
+</section>
+</div>
+</section>
+</div><div id="page-inovasi-pendidikan" class="page">
+<section class="section canvas-wrap-section seminar-innovation-section" id="inovasi-wrap-section" style="padding-top: 100px">
+<canvas class="interactive-canvas" id="inovasi-canvas" aria-hidden="true"></canvas>
+<div class="container seminar-innovation-container" style="position: relative; z-index: 1">
+<p class="section-label">Seminar PPG · Inovasi Pembelajaran</p>
+<h2 class="section-title">Inovasi Pembelajaran</h2>
+<div class="section-divider"></div>
+
+<header class="seminar-innovation-hero">
+  <span class="seminar-reflection-kicker">KARYA INOVASI PEMBELAJARAN INFORMATIKA</span>
+  <h3>Dari Materi Abstrak ke Pengalaman Belajar Interaktif</h3>
+  <p>Pengembangan media pembelajaran berbasis web untuk membantu murid memahami perangkat lunak melalui visualisasi, simulasi, dan studi kasus kontekstual dunia Kriya Tekstil.</p>
+  <div class="seminar-innovation-context"><i class="fas fa-location-dot" aria-hidden="true"></i><span>Praktik Pengalaman Lapangan · Kelas X Kriya Tekstil A · SMKN 5 Yogyakarta</span></div>
+</header>
+
+<section class="seminar-innovation-block" aria-labelledby="innovation-background-title">
+  <div class="seminar-innovation-block-heading"><span class="seminar-reflection-kicker">01 · KONTEKS</span><h3 id="innovation-background-title">Latar Belakang dan Kebutuhan</h3></div>
+  <p class="seminar-innovation-paragraph">Saat PPL di kelas X Kriya Tekstil A SMKN 5 Yogyakarta, saya mengajarkan materi perangkat lunak pada mata pelajaran Informatika. Saya mengamati bahwa ketika materi hanya disampaikan melalui ceramah dan PPT, murid cenderung pasif, cepat jenuh, dan mudah terdistraksi. Sebaliknya, mereka lebih antusias ketika diajak berkegiatan langsung, seperti kuis dan aktivitas interaktif.</p>
+  <div class="seminar-innovation-two-col">
+    <article class="seminar-innovation-panel">
+      <h4><i class="fas fa-magnifying-glass" aria-hidden="true"></i> Hal yang saya amati</h4>
+      <ul>
+        <li>Penyampaian dengan PPT membuat murid pasif dan mudah terdistraksi.</li>
+        <li>Materi masih abstrak: murid belum melihat bagaimana perangkat lunak meneruskan perintah ke perangkat keras dan masih kesulitan membedakan jenis-jenis software.</li>
+        <li>Pengumpulan tugas kelompok melalui Google Drive belum efisien.</li>
+      </ul>
+    </article>
+    <article class="seminar-innovation-panel seminar-innovation-panel-accent">
+      <h4><i class="fas fa-bullseye" aria-hidden="true"></i> Kebutuhan pembelajaran</h4>
+      <p>Media visual dan interaktif dengan kasus dunia Tekstil, yang memudahkan guru mengumpulkan serta menilai hasil kerja kelompok.</p>
+    </article>
+  </div>
+</section>
+
+<section class="seminar-innovation-block" aria-labelledby="innovation-idea-title">
+  <div class="seminar-innovation-block-heading"><span class="seminar-reflection-kicker">02 · GAGASAN KREATIF</span><h3 id="innovation-idea-title">Media Pembelajaran Interaktif Berbasis Web</h3></div>
+  <p class="seminar-innovation-paragraph">Gagasan inovasi memadukan empat komponen utama agar murid tidak hanya membaca materi, tetapi juga melihat proses, mencoba simulasi, dan menyelesaikan persoalan kontekstual.</p>
+  <div class="seminar-innovation-feature-grid">
+    <article class="seminar-innovation-feature"><span class="seminar-innovation-feature-no">01</span><div><h4>Visualisasi Alur Kerja</h4><p>Memperlihatkan secara konkret bagaimana instruksi software dieksekusi oleh hardware.</p></div></article>
+    <article class="seminar-innovation-feature"><span class="seminar-innovation-feature-no">02</span><div><h4>Aktivitas Langsung</h4><p>Simulasi klasifikasi perangkat lunak berdasarkan jenis dan fungsinya.</p></div></article>
+    <article class="seminar-innovation-feature"><span class="seminar-innovation-feature-no">03</span><div><h4>LKPD Kelompok Berbasis Kasus (PBL)</h4><p>Setiap kelompok memecahkan kasus dunia Tekstil yang berbeda: memilih perangkat lunak, menjelaskan alasan, dan menarik kesimpulan.</p></div></article>
+    <article class="seminar-innovation-feature"><span class="seminar-innovation-feature-no">04</span><div><h4>Efisiensi Asesmen</h4><p>Tombol kirim mengubah LKPD menjadi PDF dan mengirimkannya ke Google Drive guru.</p></div></article>
+  </div>
+  <div class="seminar-innovation-goals">
+    <h4>Tujuan Pengembangan</h4>
+    <div class="seminar-innovation-goal-grid">
+      <article><span>01</span><h5>Meningkatkan Pemahaman Konseptual</h5><p>Membantu murid memahami fungsi dan alur kerja sistem komputer secara nyata.</p></article>
+      <article><span>02</span><h5>Mendorong Keterlibatan Aktif</h5><p>Mengubah pola belajar dari ceramah pasif menjadi eksplorasi mandiri dan interaktif.</p></article>
+      <article><span>03</span><h5>Mendukung Diferensiasi dan Praktik</h5><p>Memberikan fleksibilitas belajar yang relevan bagi karakteristik murid Kriya Tekstil.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="seminar-innovation-block" aria-labelledby="innovation-course-title">
+  <div class="seminar-innovation-block-heading"><span class="seminar-reflection-kicker">03 · KETERKAITAN</span><h3 id="innovation-course-title">Keterkaitan Inovasi dengan Mata Kuliah</h3></div>
+  <div class="seminar-innovation-two-col">
+    <article class="seminar-innovation-panel">
+      <h4><i class="fas fa-users" aria-hidden="true"></i> Pemahaman Peserta Didik dan Pembelajaran</h4>
+      <ol>
+        <li><strong>Profiling dan karakteristik murid.</strong> Mengidentifikasi kebutuhan belajar murid kelas X Kriya Tekstil yang cenderung pasif pada ceramah teoritis, tetapi antusias pada aktivitas visual dan interaktif.</li>
+        <li><strong>Akomodasi keberagaman gaya belajar.</strong> Menyediakan visualisasi alur sistem, simulasi perangkat, serta pendampingan langsung dari guru.</li>
+        <li><strong>Pembelajaran berdiferensiasi.</strong> Memfasilitasi murid mengeksplorasi konsep sesuai kecepatan belajarnya melalui media web interaktif dan studi kasus kontekstual tekstil.</li>
+      </ol>
+    </article>
+    <article class="seminar-innovation-panel">
+      <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Pembelajaran Kreatif Inovatif</h4>
+      <ol>
+        <li><strong>Integrasi TPACK.</strong> Memanfaatkan teknologi web interaktif sebagai alat visualisasi konkret untuk materi abstrak, bukan sekadar pengganti buku.</li>
+        <li><strong>Aktivitas interaktif dan gamifikasi sederhana.</strong> Simulasi klasifikasi perangkat dan kuis langsung untuk meningkatkan keterlibatan dan daya ingat murid.</li>
+        <li><strong>Inovasi pengelolaan tugas (Digital LKPD).</strong> LKPD digital berbasis kasus tekstil terintegrasi menjadi PDF di Google Drive guru.</li>
+      </ol>
+    </article>
+  </div>
+</section>
+
+<section class="seminar-innovation-block" aria-labelledby="innovation-media-title">
+  <div class="seminar-innovation-block-heading"><span class="seminar-reflection-kicker">04 · RANCANGAN MEDIA</span><h3 id="innovation-media-title">Komponen Media Pembelajaran</h3></div>
+  <div class="seminar-innovation-media-list">
+    <article><i class="fas fa-book-open" aria-hidden="true"></i><div><h4>Modul Materi Kontekstual</h4><p>Menyajikan konsep dasar dan klasifikasi software dengan bahasa ringkas yang relevan bagi murid Kriya Tekstil.</p></div></article>
+    <article><i class="fas fa-diagram-project" aria-hidden="true"></i><div><h4>Simulasi Alur Sistem (Visual)</h4><p>Memvisualisasikan proses bagaimana instruksi software dieksekusi hingga menghasilkan tindakan pada hardware.</p></div></article>
+    <article><i class="fas fa-shapes" aria-hidden="true"></i><div><h4>Simulasi Klasifikasi (Kinestetik)</h4><p>Aktivitas interaktif mengelompokkan sistem operasi, aplikasi, dan utilitas secara mandiri.</p></div></article>
+    <article><i class="fas fa-file-circle-check" aria-hidden="true"></i><div><h4>LKPD Digital Terintegrasi Drive</h4><p>Lembar kerja kelompok berbasis kasus tekstil yang otomatis terkonversi menjadi PDF dan tersimpan di Google Drive guru.</p></div></article>
+  </div>
+</section>
+
+<section class="seminar-innovation-block" aria-labelledby="innovation-next-title">
+  <div class="seminar-innovation-block-heading"><span class="seminar-reflection-kicker">05 · KEBERLANJUTAN</span><h3 id="innovation-next-title">Rencana Tindak Lanjut</h3></div>
+  <div class="seminar-action-list seminar-innovation-next-list">
+    <article class="seminar-action-item"><span class="seminar-action-number">01</span><div><h4>Uji coba terbimbing di kelas mendatang</h4><p>Menerapkan media Ruang Software secara langsung dalam pembelajaran materi sistem komputer/perangkat lunak pada tugas mengajar berikutnya.</p></div></article>
+    <article class="seminar-action-item"><span class="seminar-action-number">02</span><div><h4>Evaluasi efektivitas pembelajaran</h4><p>Mengukur peningkatan pemahaman konsep dan keaktifan murid melalui analisis hasil LKPD digital, kuis, dan observasi kelas.</p></div></article>
+    <article class="seminar-action-item"><span class="seminar-action-number">03</span><div><h4>Refleksi dan umpan balik pengguna</h4><p>Menjaring respons murid dan masukan dari rekan sejawat/guru pamong untuk menyempurnakan alur interaksi dan kenyamanan akses media.</p></div></article>
+    <article class="seminar-action-item"><span class="seminar-action-number">04</span><div><h4>Pengembangan kasus kontekstual lanjutan</h4><p>Menambahkan simulasi kasus baru yang relevan dengan perkembangan teknologi digital kejuruan, seperti mesin cetak kain digital dan bordir komputer.</p></div></article>
+  </div>
+</section>
+
+<section class="seminar-innovation-block seminar-innovation-websites" aria-labelledby="innovation-websites-title">
+  <div class="seminar-innovation-block-heading"><span class="seminar-reflection-kicker">06 · PRODUK INOVASI</span><h3 id="innovation-websites-title">Coba Langsung Media Pembelajaran</h3></div>
+  <p class="seminar-innovation-paragraph">Berikut dua produk web yang dikembangkan untuk mendukung pembelajaran materi perangkat lunak dan aktivitas LKPD kelompok.</p>
+  <div class="seminar-innovation-web-grid">
+    <article class="seminar-innovation-web-card">
+      <header><div class="seminar-innovation-web-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div><div><span class="seminar-reflection-kicker">MATERI AJAR INTERAKTIF</span><h4>Ruang Software</h4><p>Media belajar Informatika tentang perangkat lunak untuk murid kelas X SMK.</p></div></header>
+      <div class="seminar-innovation-iframe-wrap"><iframe class="seminar-innovation-iframe" loading="lazy" src="https://materisoftware.lovable.app/" title="Pratinjau media ajar interaktif Ruang Software" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe></div>
+      <div class="seminar-innovation-web-actions"><a href="https://materisoftware.lovable.app/" target="_blank" rel="noopener noreferrer" class="seminar-document-button seminar-document-button-primary"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Buka Materi Ajar</a></div>
+    </article>
+    <article class="seminar-innovation-web-card">
+      <header><div class="seminar-innovation-web-icon"><i class="fas fa-file-pen" aria-hidden="true"></i></div><div><span class="seminar-reflection-kicker">LEMBAR KERJA DIGITAL</span><h4>LKPD Online</h4><p>LKPD digital untuk aktivitas kelompok berbasis kasus pada materi perangkat lunak.</p></div></header>
+      <div class="seminar-innovation-iframe-wrap"><iframe class="seminar-innovation-iframe" loading="lazy" src="https://lkpdsoftware.netlify.app/" title="Pratinjau LKPD Online" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe></div>
+      <div class="seminar-innovation-web-actions"><a href="https://lkpdsoftware.netlify.app/" target="_blank" rel="noopener noreferrer" class="seminar-document-button seminar-document-button-primary"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Buka LKPD Online</a></div>
+    </article>
+  </div>
+  <p class="seminar-document-note seminar-innovation-embed-note"><i class="fas fa-circle-info" aria-hidden="true"></i> Pratinjau ditampilkan langsung dari website masing-masing. Apabila salah satu situs membatasi penyematan (iframe) atau tidak tampil di panel, gunakan tombol Buka Materi Ajar atau Buka LKPD Online untuk mengaksesnya di tab baru.</p>
+</section>
+
+<section class="seminar-document-section seminar-innovation-deck" aria-labelledby="innovation-deck-title">
+  <div class="seminar-document-heading">
+    <div><span class="seminar-reflection-kicker">DOKUMEN PAPARAN</span><h3 id="innovation-deck-title">PPT Seminar PPG - Adam Prasetia</h3><p>Dokumen presentasi yang menjadi dasar pemaparan inovasi pembelajaran.</p></div>
+    <div class="seminar-document-actions"><a class="seminar-document-button seminar-document-button-primary" href="docs/seminar/PPT-SEMINAR-PPG-ADAM-PRASETIA.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Buka PDF</a><a class="seminar-document-button" href="docs/seminar/PPT-SEMINAR-PPG-ADAM-PRASETIA.pdf" download><i class="fas fa-download" aria-hidden="true"></i> Unduh PDF</a></div>
+  </div>
+</section>
+
+</div>
+</section>
+</div><div id="page-about" class="page"><section class="section canvas-wrap-section" id="about-wrap-section" style="padding-top: 100px"><canvas class="interactive-canvas" id="about-canvas"></canvas><div class="container" style="position: relative; z-index: 1"><p class="section-label">Informasi</p><h2 class="section-title">Tentang E‑Portofolio Ini</h2><div class="section-divider"></div><div
 style="
 max-width: 800px;
 margin: 0 auto;
@@ -997,56 +1341,104 @@ di sekitarnya. Terima kasih telah menjadi bagian dari cerita ini.”
 ><br />Mahasiswa PPG Prajabatan
 </p><p class="right">
 Program Studi Pendidikan Informatika<br />PPL 1 · Angkatan 2025
-</p></div></div></footer><script src="assets/core.min.js" defer></script><script src="assets/inline-handlers.js" defer></script><script src="assets/loader.js" defer></script><script type="module">
+</p></div></div></footer><script src="assets/core.min.js" defer></script><script src="assets/inline-handlers.js" defer></script><script src="assets/ppl2-workspace.js" defer></script><script src="assets/loader.js" defer></script><script type="module">
 import { Lanyard } from "./assets/lanyard.js";
 const el = document.getElementById("lanyard-3d");
 if (el) {
   const nav = document.getElementById("navbar");
   const section = document.getElementById("hero-wrap-section");
+  const nextSection = section?.nextElementSibling;
   const hero = document.getElementById("hero");
   const wrap = el.parentElement;
+  const flowSpace = wrap?.querySelector(".lanyard-flow-space");
   let instance = null;
   let anchor = 0.5;
+  let sizingKey = "";
+  const BASE_SIZE = 0.55;
+  const BASE_STRAP_LENGTH = 0.8;
+  const SAFE_BOTTOM_GAP = 24;
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-  // Atur posisi & lebar wadah lanyard:
-  //  - atas  : menempel di tepi bawah navbar
-  //  - lebar : dari kolomnya sampai tepi kanan layar (satu kolom: selebar layar),
-  //            supaya kartu bisa ditarik sampai kanan
-  const snap = () => {
-    if (!section || !section.offsetParent) return; // halaman Beranda sedang disembunyikan
-
-    // --- vertikal ---
-    const navBottom = nav ? nav.offsetHeight : 0;
-    const curTop = parseFloat(el.style.marginTop) || 0;
-    const naturalTop = el.getBoundingClientRect().top + window.scrollY - curTop;
-    let nextTop = navBottom - naturalTop;
-    // Pengaman: kalau lanyard ternyata bukan elemen teratas di halaman (tata letak
-    // berubah), jangan ditarik ke atas karena bisa menimpa teks.
-    if (naturalTop - navBottom > 260) nextTop = 0;
-    if (Math.abs(nextTop - curTop) > 0.5) el.style.marginTop = nextTop + "px";
-
-    // --- horizontal ---
-    const vw = document.documentElement.clientWidth;
-    const columns = hero ? getComputedStyle(hero).gridTemplateColumns.split(" ").filter(Boolean).length : 1;
-    const col = wrap.getBoundingClientRect();
-    const left = columns > 1 ? Math.max(0, col.left - 40) : 0;
-    const width = vw - left;
-    const nextAnchor = Math.min(0.95, Math.max(0.05, (col.left + col.width / 2 - left) / width));
-    el.style.width = width + "px";
-    el.style.marginLeft = left - col.left + "px";
-    if (Math.abs(nextAnchor - anchor) > 0.001) {
-      anchor = nextAnchor;
-      if (instance) instance.update({ anchor });
+  // Membaca posisi layout dokumen tanpa terpengaruh transform animasi halaman.
+  const getDocumentOffset = node => {
+    let top = 0;
+    let left = 0;
+    let current = node;
+    while (current && current !== document.documentElement) {
+      top += current.offsetTop || 0;
+      left += current.offsetLeft || 0;
+      current = current.offsetParent;
     }
+    return { top, left };
   };
+
+  const getFrameSizing = baseHeight => {
+    const targetHeight = Math.max(
+      baseHeight,
+      nextSection ? getDocumentOffset(nextSection).top - SAFE_BOTTOM_GAP : baseHeight
+    );
+    const ratio = clamp(baseHeight / targetHeight, 0.15, 1);
+    const size = clamp(BASE_SIZE * ratio, 0.15, 0.9);
+    // Menjaga posisi awal kartu tetap sama meskipun area drag diperpanjang.
+    const originalDrop = 0.12 + (0.42 - 0.12) * BASE_STRAP_LENGTH;
+    const adjustedDrop = originalDrop * ratio;
+    const strapLength = clamp((adjustedDrop - 0.12) / 0.30, 0, 1);
+    return { targetHeight, size, strapLength };
+  };
+
+  const snap = () => {
+    if (!section || !section.offsetParent || !wrap || !flowSpace) return;
+
+    const baseHeight = flowSpace.getBoundingClientRect().height || 760;
+    const wrapPosition = getDocumentOffset(wrap);
+    const flowPosition = getDocumentOffset(flowSpace);
+    const currentFlowMargin = parseFloat(getComputedStyle(flowSpace).marginTop) || 0;
+    const naturalTop = flowPosition.top - currentFlowMargin;
+    const topOffset = -naturalTop;
+
+    // Spacer mempertahankan tinggi layout semula; kanvas 3D menjadi overlay
+    // terpisah sehingga area drag dapat memanjang tanpa mendorong section berikutnya.
+    flowSpace.style.marginTop = `${topOffset}px`;
+    el.style.position = "absolute";
+    el.style.top = `${topOffset}px`;
+    el.style.marginTop = "0px";
+
+    const viewportWidth = document.documentElement.clientWidth;
+    // Kanvas dimulai dari tepi kiri viewport pada semua ukuran layar.
+    // Ini memungkinkan kartu ditarik melintasi seluruh area hero, bukan
+    // tertahan di batas kolom kanan tempat komponen lanyard berada.
+    const leftEdge = 0;
+    const width = Math.max(1, viewportWidth - leftEdge);
+    const nextAnchor = clamp(
+      (wrapPosition.left + wrap.offsetWidth / 2 - leftEdge) / width,
+      0.05,
+      0.95
+    );
+    const sizing = getFrameSizing(baseHeight);
+
+    el.style.left = `${leftEdge - wrapPosition.left}px`;
+    el.style.width = `${width}px`;
+    el.style.height = `${sizing.targetHeight}px`;
+
+    if (Math.abs(nextAnchor - anchor) > 0.001) anchor = nextAnchor;
+    const nextSizingKey = `${anchor.toFixed(4)}|${sizing.size.toFixed(4)}|${sizing.strapLength.toFixed(4)}|${width}|${sizing.targetHeight}`;
+    if (instance && nextSizingKey !== sizingKey) {
+      instance.update({ anchor, size: sizing.size, strapLength: sizing.strapLength });
+    }
+    sizingKey = nextSizingKey;
+  };
+
   snap();
-  window.addEventListener("resize", snap);
-  if (section) new ResizeObserver(snap).observe(section);
-  if (nav) new ResizeObserver(snap).observe(nav); // tinggi navbar bisa berubah (transisi / breakpoint)
+  window.addEventListener("resize", snap, { passive: true });
+  const layoutObserver = new ResizeObserver(snap);
+  [section, nav, hero, wrap, nextSection].filter(Boolean).forEach(node => layoutObserver.observe(node));
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(snap);
 
   const boot = () => {
     snap();
+    const baseHeight = flowSpace?.getBoundingClientRect().height || 760;
+    const sizing = getFrameSizing(baseHeight);
+    sizingKey = `${anchor.toFixed(4)}|${sizing.size.toFixed(4)}|${sizing.strapLength.toFixed(4)}|${el.clientWidth}|${sizing.targetHeight}`;
     instance = Lanyard(el, {
       frontImage: "card-front.jpg",
       backImage: "card-back.jpg",
@@ -1054,20 +1446,25 @@ if (el) {
       cardColor: "#394f86",
       finish: "glossy",
       metal: "silver",
-      size: 0.55,
-      strapLength: 0.8,
+      size: sizing.size,
+      strapLength: sizing.strapLength,
       strapWidth: 0.85,
       anchor
     });
   };
 
-  // Tunggu loading screen selesai supaya animasi jatuh terlihat
-  const ls = document.getElementById("loading-screen");
-  if (ls && !ls.classList.contains("hidden")) {
-    const mo = new MutationObserver(() => {
-      if (ls.classList.contains("hidden")) { mo.disconnect(); boot(); }
+  // Tunggu loading screen selesai supaya animasi jatuh terlihat.
+  const loadingScreen = document.getElementById("loading-screen");
+  if (loadingScreen && !loadingScreen.classList.contains("hidden")) {
+    const observer = new MutationObserver(() => {
+      if (loadingScreen.classList.contains("hidden")) {
+        observer.disconnect();
+        boot();
+      }
     });
-    mo.observe(ls, { attributes: true, attributeFilter: ["class"] });
-  } else boot();
+    observer.observe(loadingScreen, { attributes: true, attributeFilter: ["class"] });
+  } else {
+    boot();
+  }
 }
 </script></body></html>
