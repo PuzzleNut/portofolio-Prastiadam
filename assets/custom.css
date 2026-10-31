@@ -1128,3 +1128,48 @@ html[data-theme="light"] .ppl2-portfolio-tab, html[data-theme="light"] .ppl2-sid
     transition-delay: 0s;
   }
 }
+
+
+/* RPP-specific analysis: E-Portfolio 1 / Analisis Produk Rancangan Pembelajaran */
+.ppl2-planning-document { display: grid; grid-template-columns: minmax(0, 1fr); margin-bottom: 14px; }
+.ppl2-planning-document .ppl2-preview-card { width: 100%; }
+.ppl2-rpp-analysis { margin-top: 14px; padding: 19px; border: 1px solid var(--border); border-radius: 17px; background: var(--card); box-shadow: 0 10px 28px var(--shadow-c-20); }
+.ppl2-rpp-analysis-heading { max-width: 900px; margin: 0 0 16px; }
+.ppl2-rpp-analysis-kicker { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--gold); font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.ppl2-rpp-analysis-heading h3 { margin: 0 0 8px; color: var(--text); font-family: var(--serif); font-size: clamp(20px, 2.4vw, 26px); line-height: 1.25; }
+.ppl2-rpp-analysis-heading p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
+.ppl2-rpp-meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 13px; }
+.ppl2-rpp-meta > div { display: flex; min-width: 0; flex-direction: column; gap: 5px; padding: 11px 12px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface-1); }
+.ppl2-rpp-meta span { color: var(--muted); font-size: 8px; font-weight: 850; letter-spacing: .1em; }
+.ppl2-rpp-meta strong { color: var(--text); font-size: 10px; line-height: 1.5; }
+.ppl2-rpp-analysis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ppl2-rpp-analysis-block { min-width: 0; padding: 14px; border: 1px solid var(--border); border-radius: 13px; background: color-mix(in srgb, var(--surface-1) 48%, var(--card)); }
+.ppl2-rpp-block-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.ppl2-rpp-index { display: grid; flex: 0 0 29px; width: 29px; height: 29px; place-items: center; border-radius: 9px; color: var(--on-gold); background: var(--gold); font-size: 9px; font-weight: 900; }
+.ppl2-rpp-block-top h4 { flex: 1 1 145px; min-width: 0; margin: 0; color: var(--text); font-size: 11px; line-height: 1.45; }
+.ppl2-rpp-page { padding: 4px 7px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 8px; white-space: nowrap; }
+.ppl2-rpp-analysis-block p { margin: 0 0 9px; color: var(--text); font-size: 10px; line-height: 1.75; }
+.ppl2-rpp-analysis-takeaway { display: flex; flex-direction: column; gap: 4px; margin-top: 11px; padding: 10px 11px; border-left: 3px solid var(--gold); border-radius: 0 9px 9px 0; background: var(--surface-1); }
+.ppl2-rpp-analysis-takeaway strong { color: var(--gold); font-size: 9px; }
+.ppl2-rpp-analysis-takeaway span { color: var(--muted); font-size: 9px; line-height: 1.7; }
+.ppl2-rpp-review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 11px; }
+.ppl2-rpp-review-card { min-width: 0; padding: 14px; border: 1px solid var(--border); border-radius: 13px; background: var(--card); }
+.ppl2-rpp-review-card h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; color: var(--text); font-size: 11px; }
+.ppl2-rpp-review-card h4 i { color: var(--gold); }
+.ppl2-rpp-review-card ul { display: grid; gap: 7px; margin: 0; padding-left: 17px; }
+.ppl2-rpp-review-card li { padding-left: 2px; color: var(--muted); font-size: 9.5px; line-height: 1.65; }
+.ppl2-rpp-conclusion { margin-top: 11px; padding: 14px 15px; border: 1px solid color-mix(in srgb, var(--gold) 30%, var(--border)); border-radius: 13px; background: color-mix(in srgb, var(--gold) 6%, var(--card)); }
+.ppl2-rpp-conclusion > span { display: inline-flex; align-items: center; gap: 7px; color: var(--gold); font-size: 9px; font-weight: 900; letter-spacing: .11em; }
+.ppl2-rpp-conclusion p { margin: 8px 0; color: var(--text); font-size: 10px; line-height: 1.8; }
+.ppl2-rpp-conclusion small { display: block; color: var(--muted); font-size: 9px; line-height: 1.7; }
+@media (max-width: 860px) {
+  .ppl2-rpp-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ppl2-rpp-analysis-grid, .ppl2-rpp-review-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .ppl2-rpp-analysis { padding: 13px; }
+  .ppl2-rpp-meta { gap: 6px; }
+  .ppl2-rpp-meta > div, .ppl2-rpp-analysis-block, .ppl2-rpp-review-card { padding: 10px; }
+  .ppl2-rpp-block-top { gap: 6px; }
+  .ppl2-rpp-page { margin-left: 37px; }
+}
