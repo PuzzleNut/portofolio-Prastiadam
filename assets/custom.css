@@ -1108,3 +1108,23 @@ html[data-theme="light"] .ppl2-portfolio-tab, html[data-theme="light"] .ppl2-sid
     transition-delay: 0s;
   }
 }
+
+/* PPL 1 dropdowns: keep the hover path continuous, matching the Seminar Refleksi fix. */
+@media (min-width: 981px) and (hover: hover) and (pointer: fine) {
+  #navbar #dropdown-porto1 > .dropdown-content,
+  #navbar #dropdown-porto2 > .dropdown-content {
+    top: 100%;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  #navbar #dropdown-porto1:hover > .dropdown-content,
+  #navbar #dropdown-porto1.show > .dropdown-content,
+  #navbar #dropdown-porto2:hover > .dropdown-content,
+  #navbar #dropdown-porto2.show > .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+    transition-delay: 0s;
+  }
+}
