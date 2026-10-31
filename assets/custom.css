@@ -1071,3 +1071,15 @@ html[data-theme="light"] .ppl2-portfolio-tab, html[data-theme="light"] .ppl2-sid
 @media (max-width: 900px) { .seminar-innovation-iframe { height: 500px; } }
 @media (max-width: 760px) { .seminar-innovation-two-col, .seminar-innovation-web-grid { grid-template-columns: 1fr; } .seminar-innovation-goal-grid { grid-template-columns: 1fr; } .seminar-innovation-goal-grid article { padding: 0 0 13px; border-right: 0; border-bottom: 1px solid var(--border); } .seminar-innovation-goal-grid article:last-child { padding-bottom: 0; border-bottom: 0; } }
 @media (max-width: 600px) { .seminar-innovation-hero { padding: 24px 20px; border-radius: 19px; } .seminar-innovation-context { border-radius: 13px; line-height: 1.6; } .seminar-innovation-panel { padding: 19px; } .seminar-innovation-feature-grid, .seminar-innovation-media-list { grid-template-columns: 1fr; } .seminar-innovation-web-card > header { min-height: 0; padding: 18px; } .seminar-innovation-iframe { height: 68vh; min-height: 420px; max-height: 620px; } .seminar-innovation-web-actions .seminar-document-button { width: 100%; } }
+
+/* Performance: external seminar apps are loaded only after the visitor requests a preview. */
+.seminar-preview-lazy { min-height: 560px; padding: 0 13px; }
+.seminar-preview-placeholder { min-height: 560px; border: 1px dashed var(--border); border-radius: 12px; background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 58%), var(--surface-1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; text-align: center; }
+.seminar-preview-placeholder > i { color: var(--gold); font-size: 34px; }
+.seminar-preview-placeholder > strong { color: var(--heading-ink); font-family: var(--serif); font-size: 20px; }
+.seminar-preview-placeholder > span { max-width: 360px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.seminar-preview-load-button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 42px; margin-top: 7px; padding: 0 18px; border: 1px solid color-mix(in srgb, var(--gold) 60%, var(--border)); border-radius: 999px; background: color-mix(in srgb, var(--gold) 13%, var(--surface-1)); color: var(--heading-ink); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.seminar-preview-load-button:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--gold) 22%, var(--surface-1)); }
+.seminar-preview-lazy .seminar-innovation-iframe { width: 100%; }
+@media (max-width: 900px) { .seminar-preview-lazy, .seminar-preview-placeholder { min-height: 500px; } }
+@media (max-width: 600px) { .seminar-preview-lazy, .seminar-preview-placeholder { min-height: 420px; } .seminar-preview-placeholder { padding: 20px; } }
