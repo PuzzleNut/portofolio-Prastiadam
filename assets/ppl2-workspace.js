@@ -41,8 +41,23 @@
     root.querySelectorAll("[data-ppl2-planning-only]").forEach(function (element) {
       element.hidden = name !== "planning";
     });
+    root.querySelectorAll("[data-ppl2-material-only]").forEach(function (element) {
+      element.hidden = name !== "material";
+    });
+    root.querySelectorAll("[data-ppl2-media-only]").forEach(function (element) {
+      element.hidden = name !== "media";
+    });
+    root.querySelectorAll("[data-ppl2-video-only]").forEach(function (element) {
+      element.hidden = name !== "video";
+    });
+    root.querySelectorAll("[data-ppl2-nonteaching-only]").forEach(function (element) {
+      element.hidden = name !== "nonteaching";
+    });
+    root.querySelectorAll("[data-ppl2-assessment-only]").forEach(function (element) {
+      element.hidden = name !== "assessment";
+    });
     var planningWorkspace = root.querySelector(".ppl2-workspace--planning");
-    if (planningWorkspace) planningWorkspace.classList.toggle("is-other-section", name !== "planning");
+    if (planningWorkspace) planningWorkspace.classList.toggle("is-other-section", !["planning", "material", "media", "video", "nonteaching", "assessment"].includes(name));
   }
 
   portfolioTabs.forEach(function (tab, index) {
@@ -109,18 +124,22 @@
     if (!placeholder) return;
     const frame = document.createElement("iframe");
     frame.className = "ppl2-video-frame";
-    frame.src = source;
-    frame.title = "Video pelaksanaan praktik mengajar mandiri";
+    frame.title = card.getAttribute("data-video-title") || "Video praktik mengajar";
     frame.loading = "lazy";
     frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     frame.allowFullscreen = true;
+    // YouTube requires an HTTP Referer for embedded playback (Error 153).
+    // Set the policy before assigning src so it applies to the first request.
+    frame.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    frame.src = source;
     placeholder.replaceWith(frame);
     const link = document.createElement("a");
     link.className = "ppl2-video-link";
-    link.href = source;
+    link.href = card.getAttribute("data-video-watch-url") || source;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "Buka video di tab baru";
+    link.innerHTML = '<i class="fab fa-youtube" aria-hidden="true"></i> Buka video di YouTube';
     card.appendChild(link);
   });
 

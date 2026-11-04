@@ -190,3 +190,421 @@
     animation: none !important;
   }
 }
+
+
+/* E-Portfolio 1 / Materi Ajar: mirror the Rancangan Pembelajaran grid.
+   Global title, component navigation + PDF preview, then full-width analysis. */
+#ppl2-panel-portfolio-1 .ppl2-global-material-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  width: 100%;
+  max-width: none;
+  margin: -7px 0 0;
+  padding: 0 0 2px;
+  text-align: center;
+  align-items: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-material-heading .ppl2-content-kicker {
+  display: inline-block;
+  margin: 0 0 6px;
+  text-align: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-material-heading h2 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 6px;
+  text-align: center;
+  text-wrap: balance;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-material-heading p {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning [data-ppl2-material-only][hidden] {
+  display: none !important;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-material {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview .ppl2-card-heading,
+#ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview .ppl2-preview-foot,
+#ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview .ppl2-pdf-actions {
+  flex: 0 0 auto;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview .ppl2-pdf-viewer {
+  display: block;
+  flex: 1 1 0;
+  width: 100%;
+  height: 0 !important;
+  min-height: 0 !important;
+  border: 0;
+  background: #f5f6f8;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview .ppl2-empty-preview {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-material-analysis {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-material-evidence {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 760px) {
+  #ppl2-panel-portfolio-1 .ppl2-global-material-heading {
+    grid-column: 1;
+    grid-row: 1;
+    margin: -4px 0 0;
+    padding-bottom: 0;
+  }
+  #ppl2-panel-portfolio-1 #ppl2-content-material {
+    height: auto;
+  }
+  #ppl2-panel-portfolio-1 #ppl2-content-material .ppl2-material-dynamic-preview {
+    min-height: 0;
+    height: min(66vh, 620px);
+  }
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-material-analysis {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-material-evidence {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ppl2-panel-portfolio-1 .ppl2-global-material-heading,
+  #ppl2-panel-portfolio-1 #ppl2-content-material {
+    animation: none !important;
+  }
+}
+
+
+/* E-Portfolio 1 / Media Pembelajaran and Video Praktik Mengajar.
+   Reuse the same grid: centered heading, sidebar + preview, then full-width analysis. */
+#ppl2-panel-portfolio-1 .ppl2-global-media-heading,
+#ppl2-panel-portfolio-1 .ppl2-global-video-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  width: 100%;
+  max-width: none;
+  margin: -7px 0 0;
+  padding: 0 0 2px;
+  text-align: center;
+  align-items: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-media-heading .ppl2-content-kicker,
+#ppl2-panel-portfolio-1 .ppl2-global-video-heading .ppl2-content-kicker {
+  display: inline-block;
+  margin: 0 0 6px;
+  text-align: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-media-heading h2,
+#ppl2-panel-portfolio-1 .ppl2-global-video-heading h2 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 6px;
+  text-align: center;
+  text-wrap: balance;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-media-heading p,
+#ppl2-panel-portfolio-1 .ppl2-global-video-heading p {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning [data-ppl2-media-only][hidden],
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning [data-ppl2-video-only][hidden] {
+  display: none !important;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-media,
+#ppl2-panel-portfolio-1 #ppl2-content-video {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-media .ppl2-media-dynamic-preview,
+#ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-dynamic-preview {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-media .ppl2-media-dynamic-preview .ppl2-card-heading,
+#ppl2-panel-portfolio-1 #ppl2-content-media .ppl2-media-dynamic-preview .ppl2-preview-foot,
+#ppl2-panel-portfolio-1 #ppl2-content-media .ppl2-media-dynamic-preview .ppl2-pdf-actions,
+#ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-dynamic-preview .ppl2-card-heading,
+#ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-dynamic-preview .ppl2-preview-foot,
+#ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-dynamic-preview .ppl2-video-link {
+  flex: 0 0 auto;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-media .ppl2-media-dynamic-preview .ppl2-pdf-viewer {
+  display: block;
+  flex: 1 1 0;
+  width: 100%;
+  height: 0 !important;
+  min-height: 0 !important;
+  border: 0;
+  background: #f5f6f8;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #111;
+}
+#ppl2-panel-portfolio-1 .ppl2-media-download-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+}
+#ppl2-panel-portfolio-1 .ppl2-media-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+}
+#ppl2-panel-portfolio-1 .ppl2-media-download:hover { text-decoration: underline; }
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-media-analysis,
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-video-analysis {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-media-evidence,
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-video-evidence {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 760px) {
+  #ppl2-panel-portfolio-1 .ppl2-global-media-heading,
+  #ppl2-panel-portfolio-1 .ppl2-global-video-heading {
+    grid-column: 1;
+    grid-row: 1;
+    margin: -4px 0 0;
+    padding-bottom: 0;
+  }
+  #ppl2-panel-portfolio-1 #ppl2-content-media,
+  #ppl2-panel-portfolio-1 #ppl2-content-video { height: auto; }
+  #ppl2-panel-portfolio-1 #ppl2-content-media .ppl2-media-dynamic-preview {
+    min-height: 0;
+    height: min(66vh, 620px);
+  }
+  #ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-dynamic-preview { height: auto; }
+  #ppl2-panel-portfolio-1 #ppl2-content-video .ppl2-video-frame { min-height: 210px; }
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-media-analysis,
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-video-analysis {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-media-evidence,
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-video-evidence {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ppl2-panel-portfolio-1 .ppl2-global-media-heading,
+  #ppl2-panel-portfolio-1 .ppl2-global-video-heading,
+  #ppl2-panel-portfolio-1 #ppl2-content-media,
+  #ppl2-panel-portfolio-1 #ppl2-content-video { animation: none !important; }
+}
+
+
+/* E-Portfolio 1 / Kegiatan Nonmengajar and Instrumen Penilaian.
+   Mirror the approved Rancangan Pembelajaran grid: heading above,
+   component navigation at left, selected preview at right, then analysis
+   and evidence as full-width rows below. */
+#ppl2-panel-portfolio-1 .ppl2-global-nonteaching-heading,
+#ppl2-panel-portfolio-1 .ppl2-global-assessment-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  width: 100%;
+  max-width: none;
+  margin: -7px 0 0;
+  padding: 0 0 2px;
+  text-align: center;
+  align-items: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-nonteaching-heading .ppl2-content-kicker,
+#ppl2-panel-portfolio-1 .ppl2-global-assessment-heading .ppl2-content-kicker {
+  display: inline-block;
+  margin: 0 0 6px;
+  text-align: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-nonteaching-heading h2,
+#ppl2-panel-portfolio-1 .ppl2-global-assessment-heading h2 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 6px;
+  text-align: center;
+  text-wrap: balance;
+}
+#ppl2-panel-portfolio-1 .ppl2-global-nonteaching-heading p,
+#ppl2-panel-portfolio-1 .ppl2-global-assessment-heading p {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning [data-ppl2-nonteaching-only][hidden],
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning [data-ppl2-assessment-only][hidden] {
+  display: none !important;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-nonteaching,
+#ppl2-panel-portfolio-1 #ppl2-content-assessment {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-nonteaching .ppl2-nonteaching-dynamic-preview,
+#ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 370px;
+  margin: 0;
+  box-sizing: border-box;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-nonteaching .ppl2-empty-preview,
+#ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-empty-preview {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-nonteaching-analysis,
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-assessment-analysis {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-nonteaching-evidence,
+#ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-assessment-evidence {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 760px) {
+  #ppl2-panel-portfolio-1 .ppl2-global-nonteaching-heading,
+  #ppl2-panel-portfolio-1 .ppl2-global-assessment-heading {
+    grid-column: 1;
+    grid-row: 1;
+    margin: -4px 0 0;
+    padding-bottom: 0;
+  }
+  #ppl2-panel-portfolio-1 #ppl2-content-nonteaching,
+  #ppl2-panel-portfolio-1 #ppl2-content-assessment { height: auto; }
+  #ppl2-panel-portfolio-1 #ppl2-content-nonteaching .ppl2-nonteaching-dynamic-preview,
+  #ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview {
+    height: auto;
+    min-height: 0;
+  }
+  #ppl2-panel-portfolio-1 #ppl2-content-nonteaching .ppl2-empty-preview,
+  #ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-empty-preview { min-height: 245px; }
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-nonteaching-analysis,
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-assessment-analysis {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-nonteaching-evidence,
+  #ppl2-panel-portfolio-1 .ppl2-workspace--planning > .ppl2-assessment-evidence {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ppl2-panel-portfolio-1 .ppl2-global-nonteaching-heading,
+  #ppl2-panel-portfolio-1 .ppl2-global-assessment-heading,
+  #ppl2-panel-portfolio-1 #ppl2-content-nonteaching,
+  #ppl2-panel-portfolio-1 #ppl2-content-assessment { animation: none !important; }
+}
+
+/* PPL 2 / E-Portfolio 1 / Instrumen Penilaian — pratinjau PDF.
+   Mengikuti pola panel materi dan media: iframe mengisi sisa tinggi kartu. */
+#ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview .ppl2-card-heading,
+#ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview .ppl2-preview-foot,
+#ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview .ppl2-pdf-actions {
+  flex: 0 0 auto;
+}
+#ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview .ppl2-pdf-viewer {
+  display: block;
+  flex: 1 1 0;
+  width: 100%;
+  height: 0 !important;
+  min-height: 0 !important;
+  border: 0;
+  background: #f5f6f8;
+}
+@media (max-width: 760px) {
+  #ppl2-panel-portfolio-1 #ppl2-content-assessment .ppl2-assessment-dynamic-preview.has-pdf {
+    min-height: 0;
+    height: min(66vh, 620px);
+  }
+}
