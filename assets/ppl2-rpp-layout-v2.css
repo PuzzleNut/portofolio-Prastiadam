@@ -1,0 +1,109 @@
+/* PPL 2 / E-Portfolio 1 / Rancangan Pembelajaran
+   Structural layout override: title centered, picker + PDF side by side,
+   analysis as a separate full-width block below the document row. */
+#ppl2-content-planning > .ppl2-content-heading--planning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 2px auto 20px;
+  text-align: center !important;
+}
+#ppl2-content-planning > .ppl2-content-heading--planning .ppl2-content-kicker {
+  display: inline-block;
+  margin: 0 0 8px;
+  text-align: center;
+}
+#ppl2-content-planning > .ppl2-content-heading--planning h2 {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 8px;
+  text-align: center !important;
+  text-wrap: balance;
+}
+#ppl2-content-planning > .ppl2-content-heading--planning p {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center !important;
+}
+
+/* Only the selector and preview are children of this two-column grid. */
+#ppl2-content-planning > .ppl2-planning-document-grid {
+  display: grid !important;
+  width: 100%;
+  max-width: none;
+  grid-template-columns: minmax(205px, 0.72fr) minmax(0, 1.75fr);
+  grid-template-rows: minmax(0, auto);
+  gap: 13px;
+  align-items: start;
+  margin: 0;
+}
+#ppl2-content-planning .ppl2-rpp-document-picker,
+#ppl2-content-planning .ppl2-rpp-dynamic-preview {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+#ppl2-content-planning .ppl2-rpp-document-picker {
+  align-self: start;
+}
+#ppl2-content-planning .ppl2-rpp-dynamic-preview {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+#ppl2-content-planning .ppl2-rpp-dynamic-preview .ppl2-pdf-viewer {
+  display: block;
+  width: 100%;
+  height: clamp(390px, 48vw, 650px);
+  min-height: 390px;
+  flex: 1 1 auto;
+}
+
+/* The analysis is deliberately outside the document grid and spans the full
+   width of the detail area below both columns. */
+#ppl2-content-planning > .ppl2-rpp-analysis {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 18px 0 0;
+  box-sizing: border-box;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+#ppl2-content-planning > .ppl2-evidence-strip {
+  width: 100%;
+  max-width: none;
+  margin-top: 14px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 980px) {
+  #ppl2-content-planning > .ppl2-planning-document-grid {
+    grid-template-columns: minmax(185px, 0.72fr) minmax(0, 1.55fr);
+    gap: 10px;
+  }
+}
+@media (max-width: 760px) {
+  #ppl2-content-planning > .ppl2-content-heading--planning {
+    margin-bottom: 16px;
+  }
+  #ppl2-content-planning > .ppl2-planning-document-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+  }
+  #ppl2-content-planning .ppl2-rpp-dynamic-preview .ppl2-pdf-viewer {
+    height: 62vh;
+    min-height: 300px;
+    max-height: 520px;
+  }
+  #ppl2-content-planning > .ppl2-rpp-analysis {
+    margin-top: 12px;
+  }
+}
