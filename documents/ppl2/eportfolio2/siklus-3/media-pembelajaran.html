@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pseudocode & Struktur Data — Kelas X Keramik B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & VARIABEL ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --clay:#C1663F;
+  --clay-dark:#8C4A2F;
+  --clay-light:#E8A87C;
+  --cream:#FDF6EC;
+  --sand:#F4E6D6;
+  --sand-deep:#EBD7C0;
+  --teal:#2A9D8F;
+  --teal-dark:#1E7568;
+  --gold:#E9B44C;
+  --ink:#2C2724;
+  --ink-soft:#6B5F57;
+  --white:#fff;
+  --radius:20px;
+  --radius-sm:12px;
+  --shadow:0 12px 34px rgba(110,70,40,.12);
+  --shadow-lg:0 24px 60px rgba(110,70,40,.18);
+}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.font-display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.25}
+img,svg{display:block;max-width:100%}
+button,input,select{font-family:inherit;font-size:inherit}
+
+/* ============ PROGRESS BAR ============ */
+#progress{
+  position:fixed;top:0;left:0;height:4px;width:0%;
+  background:linear-gradient(90deg,var(--clay),var(--gold),var(--teal));
+  z-index:999;transition:width .1s linear;border-radius:0 4px 4px 0;
+}
+
+/* ============ NAVBAR ============ */
+.nav{
+  position:fixed;top:4px;left:0;right:0;z-index:900;
+  background:rgba(253,246,236,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(193,102,63,.14);
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 6px 24px rgba(110,70,40,.09)}
+.nav-inner{
+  max-width:1180px;margin:0 auto;padding:.7rem 1.2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-family:'Plus Jakarta Sans';color:var(--clay-dark);font-size:1rem;letter-spacing:-.2px}
+.brand .dot{
+  width:30px;height:30px;border-radius:9px;
+  background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:grid;place-items:center;color:#fff;font-size:.85rem;flex:none;
+}
+.nav-links{display:flex;gap:.25rem;align-items:center}
+.nav-links a{
+  text-decoration:none;color:var(--ink-soft);font-size:.85rem;font-weight:500;
+  padding:.4rem .7rem;border-radius:9px;transition:.22s;white-space:nowrap;
+}
+.nav-links a:hover{background:var(--sand);color:var(--clay-dark)}
+.nav-toggle{
+  display:none;background:none;border:1.5px solid var(--sand-deep);
+  border-radius:10px;padding:.35rem .6rem;cursor:pointer;color:var(--clay-dark);font-size:1.1rem;
+}
+@media(max-width:900px){
+  .nav-toggle{display:block}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:.15rem;
+    background:var(--cream);border-bottom:1px solid var(--sand-deep);
+    padding:.6rem .9rem 1rem;max-height:0;overflow:hidden;
+    transition:max-height .35s ease, padding .3s;box-shadow:var(--shadow);
+  }
+  .nav-links.open{max-height:520px;padding:.6rem .9rem 1rem}
+  .nav-links a{padding:.6rem .8rem;font-size:.95rem}
+}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:7rem 1.2rem 4rem;overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(233,180,76,.28), transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(42,157,143,.22), transparent 45%),
+    radial-gradient(circle at 70% 12%, rgba(193,102,63,.20), transparent 40%),
+    var(--cream);
+}
+.hero-blob{
+  position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none;
+  animation:float 14s ease-in-out infinite;
+}
+.blob-1{width:340px;height:340px;background:var(--clay-light);top:-80px;right:-60px}
+.blob-2{width:260px;height:260px;background:var(--teal);bottom:-70px;left:-70px;animation-delay:-5s;opacity:.35}
+.blob-3{width:200px;height:200px;background:var(--gold);top:45%;left:8%;animation-delay:-9s;opacity:.3}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(20px,-30px) scale(1.08)}
+}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2;width:100%}
+.badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.75);border:1.5px solid rgba(193,102,63,.3);
+  color:var(--clay-dark);font-weight:600;font-size:.8rem;letter-spacing:.4px;
+  padding:.45rem 1rem;border-radius:100px;margin-bottom:1.4rem;
+  box-shadow:0 4px 16px rgba(193,102,63,.12);
+}
+.badge .pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--teal);
+  animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(42,157,143,.6)}
+  70%{box-shadow:0 0 0 9px rgba(42,157,143,0)}
+}
+.hero h1{
+  font-size:clamp(2.3rem,7vw,4.6rem);font-weight:800;
+  letter-spacing:-2px;line-height:1.05;color:var(--ink);margin-bottom:1.1rem;
+}
+.hero h1 .grad{
+  background:linear-gradient(115deg,var(--clay) 0%,var(--clay-dark) 45%,var(--teal) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+  font-size:clamp(1rem,2.2vw,1.2rem);color:var(--ink-soft);max-width:640px;margin-bottom:2rem;
+}
+.hero-sub b{color:var(--clay-dark)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2.6rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.85rem 1.7rem;border-radius:100px;font-weight:600;font-size:.95rem;
+  text-decoration:none;border:none;cursor:pointer;transition:.25s;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--clay),var(--clay-dark));color:#fff;
+  box-shadow:0 10px 26px rgba(193,102,63,.35);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(193,102,63,.45)}
+.btn-ghost{
+  background:rgba(255,255,255,.7);color:var(--clay-dark);
+  border:1.5px solid rgba(193,102,63,.32);
+}
+.btn-ghost:hover{background:#fff;transform:translateY(-3px)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:1.6rem}
+.stat{display:flex;flex-direction:column}
+.stat b{font-family:'Plus Jakarta Sans';font-size:1.5rem;color:var(--clay-dark);font-weight:800}
+.stat span{font-size:.78rem;color:var(--ink-soft);letter-spacing:.3px;text-transform:uppercase;font-weight:600}
+
+/* ============ SECTION UMUM ============ */
+.section{padding:5rem 1.2rem;position:relative}
+.section.alt{background:var(--white)}
+.section.tint{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%)}
+.container{max-width:1100px;margin:0 auto}
+.section-head{margin-bottom:2.8rem;max-width:760px}
+.eyebrow{
+  display:inline-block;font-family:'Plus Jakarta Sans';font-weight:800;
+  font-size:.75rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--clay);background:rgba(193,102,63,.1);
+  padding:.35rem .85rem;border-radius:100px;margin-bottom:.9rem;
+}
+.section-head h2{
+  font-size:clamp(1.7rem,4.2vw,2.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:.7rem;
+}
+.section-head p{color:var(--ink-soft);font-size:1.02rem}
+.section-head .line{
+  width:62px;height:5px;border-radius:5px;margin-top:1.1rem;
+  background:linear-gradient(90deg,var(--clay),var(--gold));
+}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ FLOWCHART SYMBOLS ============ */
+.symbol-grid{
+  display:grid;gap:1.1rem;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+}
+.symbol-card{
+  background:var(--white);border-radius:var(--radius);padding:1.4rem 1.2rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);
+  transition:.3s;position:relative;overflow:hidden;
+}
+.symbol-card::before{
+  content:'';position:absolute;inset:0 0 auto 0;height:4px;background:var(--c);
+}
+.symbol-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--c)}
+.symbol-shape{height:62px;color:var(--c);margin-bottom:.9rem;display:flex;align-items:center}
+.symbol-shape svg{width:104px;height:62px;fill:none;stroke:currentColor;stroke-width:4;stroke-linejoin:round}
+.symbol-card h3{font-size:1.02rem;font-weight:800;margin-bottom:.25rem;color:var(--ink)}
+.symbol-card .symbol-func{font-size:.86rem;color:var(--ink-soft);line-height:1.55}
+.symbol-card .symbol-func b{color:var(--clay-dark)}
+.symbol-card .symbol-ex{
+  margin-top:.7rem;font-family:'JetBrains Mono';font-size:.72rem;
+  background:var(--sand);color:var(--clay-dark);padding:.28rem .6rem;border-radius:7px;
+  display:inline-block;font-weight:600;
+}
+
+/* ============ STUDI KASUS ============ */
+.case-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;
+}
+@media(max-width:860px){.case-wrap{grid-template-columns:1fr}}
+.case-intro{
+  background:var(--white);border-radius:var(--radius);padding:1.8rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);
+}
+.case-intro h3{font-size:1.3rem;margin-bottom:.7rem;color:var(--clay-dark)}
+.case-intro p{color:var(--ink-soft);font-size:.94rem;margin-bottom:1rem}
+.case-question{
+  background:linear-gradient(135deg,rgba(42,157,143,.1),rgba(233,180,76,.14));
+  border-left:4px solid var(--teal);border-radius:10px;padding:.9rem 1rem;
+  font-size:.9rem;color:var(--ink);
+}
+.case-question b{color:var(--teal-dark)}
+.case-controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
+.btn-sm{padding:.6rem 1.15rem;font-size:.85rem;border-radius:100px;font-weight:600;cursor:pointer;border:none;transition:.22s}
+.btn-run{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;box-shadow:0 8px 20px rgba(42,157,143,.3)}
+.btn-run:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(42,157,143,.42)}
+.btn-reset{background:var(--sand);color:var(--clay-dark);border:1.5px solid var(--sand-deep)}
+.btn-reset:hover{background:var(--sand-deep)}
+
+.flow-list{display:flex;flex-direction:column;gap:.55rem}
+.flow-step{
+  display:flex;align-items:center;gap:.85rem;
+  background:var(--white);border:1.5px solid var(--sand-deep);
+  border-radius:14px;padding:.75rem 1rem;
+  opacity:.35;transform:translateX(-12px);transition:.4s;
+  box-shadow:0 3px 10px rgba(110,70,40,.06);
+}
+.flow-step.active{opacity:1;transform:none;border-color:var(--teal);box-shadow:0 8px 22px rgba(42,157,143,.18)}
+.flow-step.done{opacity:1;transform:none;border-color:var(--sand-deep);background:#fffdf9}
+.flow-num{
+  width:30px;height:30px;flex:none;border-radius:9px;display:grid;place-items:center;
+  background:var(--sand);color:var(--clay-dark);font-weight:800;font-size:.8rem;
+  font-family:'Plus Jakarta Sans';transition:.3s;
+}
+.flow-step.active .flow-num{background:var(--teal);color:#fff;transform:scale(1.12)}
+.flow-step.done .flow-num{background:var(--clay);color:#fff}
+.flow-icon{font-size:1.15rem;flex:none}
+.flow-text{font-size:.88rem;font-weight:500;color:var(--ink)}
+
+/* ============ TUJUAN ============ */
+.goal-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.goal-card{
+  background:var(--white);border-radius:var(--radius);padding:1.6rem 1.4rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);transition:.3s;
+  position:relative;
+}
+.goal-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.goal-num{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.1rem;color:#fff;
+  margin-bottom:1rem;
+}
+.goal-card:nth-child(1) .goal-num{background:linear-gradient(135deg,var(--clay),var(--clay-dark))}
+.goal-card:nth-child(2) .goal-num{background:linear-gradient(135deg,var(--teal),var(--teal-dark))}
+.goal-card:nth-child(3) .goal-num{background:linear-gradient(135deg,var(--gold),#D08E1E)}
+.goal-card:nth-child(4) .goal-num{background:linear-gradient(135deg,#8C6BB1,#5F4B8B)}
+.goal-card h3{font-size:1.05rem;margin-bottom:.4rem}
+.goal-card p{font-size:.88rem;color:var(--ink-soft)}
+
+/* ============ KODE ============ */
+.code-block{
+  background:#2B2521;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-lg);margin:1rem 0;
+}
+.code-head{
+  display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;
+  background:#221D1A;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.code-dots{display:flex;gap:.4rem}
+.code-dots i{width:11px;height:11px;border-radius:50%;display:block}
+.code-dots i:nth-child(1){background:#F26B5E}
+.code-dots i:nth-child(2){background:#F5BE4F}
+.code-dots i:nth-child(3){background:#5FCF80}
+.code-title{margin-left:.6rem;font-size:.78rem;color:#9C9188;font-family:'JetBrains Mono';font-weight:600}
+pre{
+  padding:1.2rem 1.3rem;overflow-x:auto;
+  font-family:'JetBrains Mono',monospace;font-size:.86rem;line-height:1.85;
+  color:#E8E2DC;
+}
+pre::-webkit-scrollbar{height:8px}
+pre::-webkit-scrollbar-thumb{background:#4a3f38;border-radius:8px}
+.kw{color:#FF9A76;font-weight:600}
+.io{color:#7EE0D0;font-weight:600}
+.str{color:#F5D68A}
+.var{color:#B9A8F5}
+.cm{color:#7A6E66;font-style:italic}
+.op{color:#E8E2DC}
+
+/* ============ BLOK PENJELASAN ============ */
+.explain-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media(max-width:820px){.explain-grid{grid-template-columns:1fr}}
+.info-card{
+  background:var(--white);border-radius:var(--radius);padding:1.7rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);
+}
+.info-card h3{font-size:1.15rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.55rem}
+.info-card h3 .ico{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1rem;flex:none;
+}
+.info-card p{font-size:.92rem;color:var(--ink-soft);margin-bottom:.7rem}
+.info-card ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.6rem}
+.info-card li{font-size:.9rem;color:var(--ink-soft);padding-left:1.5rem;position:relative}
+.info-card li::before{
+  content:'✓';position:absolute;left:0;top:0;color:var(--teal);font-weight:800;font-size:.85rem;
+}
+.info-card li b{color:var(--ink)}
+
+/* tabel perbandingan */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow);border:1.5px solid var(--sand-deep)}
+table{width:100%;border-collapse:collapse;background:var(--white);min-width:520px}
+th,td{padding:.95rem 1.1rem;text-align:left;font-size:.89rem;border-bottom:1px solid var(--sand-deep)}
+th{background:var(--sand);font-family:'Plus Jakarta Sans';font-weight:800;color:var(--clay-dark);font-size:.82rem;text-transform:uppercase;letter-spacing:.6px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#FFFBF6}
+td b{color:var(--clay-dark)}
+
+/* ============ SINTAKS PSEUDOCODE ============ */
+.syntax-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-bottom:1.6rem}
+.syntax-card{
+  background:var(--white);border-radius:16px;padding:1.2rem;
+  border:1.5px solid var(--sand-deep);box-shadow:0 6px 18px rgba(110,70,40,.07);
+  transition:.28s;border-top:4px solid var(--c);
+}
+.syntax-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.syntax-card .cmd{
+  font-family:'JetBrains Mono';font-weight:700;font-size:.95rem;color:var(--c);
+  background:var(--sand);display:inline-block;padding:.22rem .6rem;border-radius:7px;margin-bottom:.6rem;
+}
+.syntax-card p{font-size:.85rem;color:var(--ink-soft)}
+
+/* indentasi visual */
+.indent-demo{
+  background:var(--white);border-radius:var(--radius);padding:1.6rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);
+}
+.indent-row{
+  display:flex;align-items:center;gap:.9rem;margin-bottom:.5rem;
+  font-family:'JetBrains Mono';font-size:.85rem;
+}
+.indent-guides{display:flex;gap:0;flex:none}
+.indent-guides span{
+  width:24px;height:26px;border-left:2px dashed var(--clay-light);display:block;
+}
+.indent-code{background:#2B2521;color:#E8E2DC;padding:.3rem .8rem;border-radius:8px}
+.indent-note{font-family:'Inter';font-size:.78rem;color:var(--ink-soft);font-style:italic}
+
+/* ============ STRUKTUR DATA ============ */
+.ds-grid{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ds-card{
+  background:var(--white);border-radius:var(--radius);padding:1.7rem 1.5rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);transition:.3s;
+  position:relative;overflow:hidden;
+}
+.ds-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg)}
+.ds-card .ds-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:.6rem}
+.ds-card .ds-icon{
+  width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:1.5rem;flex:none;
+}
+.ds-card h3{font-size:1.25rem;margin-bottom:.1rem}
+.ds-card .ds-sub{font-size:.78rem;color:var(--ink-soft);font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+.ds-card p{font-size:.9rem;color:var(--ink-soft);margin:.7rem 0}
+.ds-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-top:.5rem}
+.ds-card li{font-size:.85rem;color:var(--ink-soft);padding-left:1.3rem;position:relative}
+.ds-card li::before{content:'▸';position:absolute;left:0;color:var(--clay);font-weight:800}
+.badge-fifo,.badge-lifo{
+  font-family:'Plus Jakarta Sans';font-weight:800;font-size:.68rem;letter-spacing:1.2px;
+  padding:.3rem .7rem;border-radius:100px;color:#fff;white-space:nowrap;
+}
+.badge-lifo{background:linear-gradient(135deg,var(--clay),var(--clay-dark))}
+.badge-fifo{background:linear-gradient(135deg,var(--teal),var(--teal-dark))}
+
+/* ============ SIMULASI ============ */
+.sim-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.sim-tab{
+  padding:.7rem 1.4rem;border-radius:100px;border:1.5px solid var(--sand-deep);
+  background:var(--white);color:var(--ink-soft);font-weight:600;font-size:.88rem;
+  cursor:pointer;transition:.25s;display:flex;align-items:center;gap:.45rem;
+}
+.sim-tab:hover{border-color:var(--clay-light);color:var(--clay-dark)}
+.sim-tab.active{background:linear-gradient(135deg,var(--clay),var(--clay-dark));color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(193,102,63,.3)}
+.sim-panel{display:none;animation:fadeUp .45s ease}
+.sim-panel.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.sim-box{
+  background:var(--white);border-radius:var(--radius);padding:1.6rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);
+}
+.sim-title{font-size:1.1rem;font-weight:800;margin-bottom:.3rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.sim-desc{font-size:.86rem;color:var(--ink-soft);margin-bottom:1.2rem}
+
+.ctrl-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-bottom:1.3rem}
+.ctrl-input{
+  padding:.6rem .9rem;border-radius:11px;border:1.5px solid var(--sand-deep);
+  background:var(--cream);color:var(--ink);font-size:.88rem;font-weight:600;
+  outline:none;transition:.2s;width:110px;
+}
+.ctrl-input:focus{border-color:var(--clay);background:#fff;box-shadow:0 0 0 3px rgba(193,102,63,.13)}
+.ctrl-input::placeholder{color:#A99C92;font-weight:500}
+
+/* array */
+.array-grid{
+  display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.5rem;margin-bottom:.9rem;
+}
+@media(max-width:640px){.array-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.arr-cell{
+  border-radius:12px;border:2px solid var(--sand-deep);background:var(--cream);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:.7rem .2rem;min-height:78px;transition:.3s;position:relative;
+}
+.arr-cell .arr-val{font-family:'JetBrains Mono';font-weight:700;font-size:.95rem;color:var(--ink)}
+.arr-cell .arr-idx{
+  font-size:.65rem;color:var(--ink-soft);font-weight:700;margin-top:.25rem;
+  background:var(--sand);padding:.05rem .45rem;border-radius:6px;
+}
+.arr-cell.empty{background:repeating-linear-gradient(45deg,#FBF3E9,#FBF3E9 6px,#F4E6D6 6px,#F4E6D6 12px)}
+.arr-cell.empty .arr-val{color:#C9B8A8}
+.arr-cell.hl{
+  border-color:var(--teal);background:rgba(42,157,143,.13);
+  transform:translateY(-6px) scale(1.05);box-shadow:0 10px 22px rgba(42,157,143,.28);
+}
+.arr-cell.hl .arr-val{color:var(--teal-dark)}
+.arr-cell.filled{border-color:var(--clay-light);background:#FFF9F3}
+
+/* stack */
+.stack-holder{display:flex;flex-direction:column;align-items:center;gap:.45rem;min-height:250px;justify-content:flex-end;padding:.7rem 0}
+.stack-block{
+  width:min(260px,100%);padding:.75rem 1rem;border-radius:12px;
+  background:linear-gradient(135deg,#FFF4EA,#FBE7D6);
+  border:2px solid var(--clay-light);color:var(--clay-dark);
+  font-family:'JetBrains Mono';font-weight:700;font-size:.95rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  animation:popIn .35s cubic-bezier(.2,1.4,.5,1);
+}
+.stack-block.top{border-color:var(--clay);background:linear-gradient(135deg,var(--clay),var(--clay-dark));color:#fff;box-shadow:0 10px 24px rgba(193,102,63,.35)}
+.tag{font-style:normal;font-size:.62rem;letter-spacing:1.2px;font-weight:800;background:rgba(255,255,255,.25);padding:.15rem .5rem;border-radius:100px}
+@keyframes popIn{from{opacity:0;transform:translateY(-14px) scale(.92)}to{opacity:1;transform:none}}
+.stack-base{width:min(280px,100%);height:6px;border-radius:6px;background:var(--sand-deep);margin-top:.4rem}
+.stack-empty{color:#B5A79B;font-size:.86rem;font-style:italic;padding:2rem 0}
+
+/* queue */
+.queue-holder{
+  display:flex;gap:.5rem;align-items:stretch;overflow-x:auto;padding:.9rem .2rem 1.1rem;
+  min-height:130px;
+}
+.queue-block{
+  min-width:82px;flex:none;border-radius:12px;padding:.85rem .5rem;
+  background:linear-gradient(135deg,#E9F8F6,#D6F0EC);
+  border:2px solid var(--teal);color:var(--teal-dark);
+  font-family:'JetBrains Mono';font-weight:700;font-size:.92rem;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;
+  animation:slideIn .35s cubic-bezier(.2,1.4,.5,1);position:relative;
+}
+.queue-block.front{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;box-shadow:0 10px 22px rgba(42,157,143,.32)}
+.queue-block .q-tag{font-size:.58rem;letter-spacing:1px;font-weight:800;background:rgba(255,255,255,.28);padding:.1rem .4rem;border-radius:100px}
+@keyframes slideIn{from{opacity:0;transform:translateX(24px) scale(.9)}to{opacity:1;transform:none}}
+.queue-empty{color:#B5A79B;font-size:.86rem;font-style:italic;display:grid;place-items:center;width:100%}
+
+.sim-log{
+  margin-top:1.1rem;background:var(--sand);border-radius:12px;padding:.8rem 1rem;
+  font-family:'JetBrains Mono';font-size:.8rem;color:var(--clay-dark);
+  border-left:4px solid var(--clay);min-height:44px;display:flex;align-items:center;
+}
+.sim-hint{
+  margin-top:.8rem;font-size:.8rem;color:var(--ink-soft);
+  background:rgba(42,157,143,.08);border-radius:10px;padding:.7rem .9rem;
+  border-left:3px solid var(--teal);
+}
+
+/* ============ KUIS ============ */
+.quiz-card{
+  background:var(--white);border-radius:var(--radius);padding:1.7rem;
+  border:1.5px solid var(--sand-deep);box-shadow:var(--shadow);margin-bottom:1.1rem;
+}
+.quiz-q{font-weight:700;font-size:1rem;margin-bottom:1rem;display:flex;gap:.7rem}
+.quiz-q .qn{
+  width:28px;height:28px;flex:none;border-radius:9px;background:var(--clay);color:#fff;
+  display:grid;place-items:center;font-size:.8rem;font-family:'Plus Jakarta Sans';font-weight:800;
+}
+.quiz-opts{display:flex;flex-direction:column;gap:.55rem}
+.quiz-opt{
+  padding:.75rem 1rem;border-radius:12px;border:1.5px solid var(--sand-deep);
+  background:var(--cream);cursor:pointer;transition:.22s;font-size:.89rem;text-align:left;
+  color:var(--ink);font-weight:500;
+}
+.quiz-opt:hover{border-color:var(--clay-light);background:#FFF9F3;transform:translateX(4px)}
+.quiz-opt.correct{background:rgba(42,157,143,.14);border-color:var(--teal);color:var(--teal-dark);font-weight:700}
+.quiz-opt.wrong{background:rgba(214,80,60,.1);border-color:#D6503C;color:#B23A28}
+.quiz-opt:disabled{cursor:default;transform:none}
+.quiz-fb{margin-top:.8rem;font-size:.85rem;padding:.7rem .9rem;border-radius:10px;display:none}
+.quiz-fb.show{display:block;animation:fadeUp .3s}
+.quiz-fb.ok{background:rgba(42,157,143,.12);color:var(--teal-dark)}
+.quiz-fb.no{background:rgba(214,80,60,.1);color:#B23A28}
+
+/* ============ FOOTER ============ */
+footer{
+  background:linear-gradient(160deg,#2B2521,#3A302A);color:#CFC4BB;
+  padding:3rem 1.2rem 2rem;text-align:center;
+}
+footer h3{color:#fff;font-size:1.3rem;margin-bottom:.5rem}
+footer p{font-size:.88rem;max-width:520px;margin:0 auto .5rem}
+footer .foot-note{font-size:.78rem;color:#8E827A;margin-top:1.6rem;border-top:1px solid rgba(255,255,255,.09);padding-top:1.4rem}
+
+/* ============ BACK TO TOP ============ */
+#toTop{
+  position:fixed;right:1.1rem;bottom:1.1rem;width:46px;height:46px;border-radius:14px;
+  background:linear-gradient(135deg,var(--clay),var(--clay-dark));color:#fff;border:none;
+  cursor:pointer;font-size:1.1rem;box-shadow:0 10px 26px rgba(193,102,63,.4);
+  opacity:0;pointer-events:none;transition:.3s;z-index:800;
+}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translateY(-4px)}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot">🎨</span> X Keramik B</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#flowchart">Flowchart</a>
+      <a href="#kasus">Studi Kasus</a>
+      <a href="#tujuan">Tujuan</a>
+      <a href="#pseudocode">Pseudocode</a>
+      <a href="#penulisan">Penulisan</a>
+      <a href="#strukturdata">Struktur Data</a>
+      <a href="#simulasi">Simulasi</a>
+      <a href="#kuis">Kuis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="atas">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-blob blob-3"></div>
+  <div class="hero-inner">
+    <span class="badge"><span class="pulse"></span> Informatika · Kelas X Keramik B</span>
+    <h1>Pseudocode &amp;<br><span class="grad">Struktur Data</span></h1>
+    <p class="hero-sub">
+      Dari menggambar alur (<b>flowchart</b>) menuju menuliskan logika (<b>pseudocode</b>),
+      sampai menyimpan data dengan rapi (<b>struktur data</b>). Yuk kita mulai perjalanan
+      berpikir runtut seperti seorang perajin yang teliti! 🚀
+    </p>
+    <div class="hero-actions">
+      <a href="#flowchart" class="btn btn-primary">Mulai Belajar →</a>
+      <a href="#simulasi" class="btn btn-ghost">🎮 Langsung ke Simulasi</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>5</b><span>Simbol Flowchart</span></div>
+      <div class="stat"><b>3</b><span>Struktur Data</span></div>
+      <div class="stat"><b>3</b><span>Simulasi Interaktif</span></div>
+      <div class="stat"><b>~60</b><span>Menit Belajar</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 1. ULASAN FLOWCHART ============ -->
+<section class="section alt" id="flowchart">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ulasan Singkat · Pertemuan Lalu</span>
+      <h2>Ingat Lagi: Simbol Flowchart &amp; Fungsinya</h2>
+      <p>
+        Sebelum masuk ke materi inti, mari kita segarkan ingatan tentang <b>flowchart</b> —
+        diagram yang menggambarkan alur sebuah program menggunakan simbol-simbol khusus.
+        Setiap simbol punya <b>arti dan fungsi yang berbeda</b>. Klik/hover kartu di bawah untuk mengingatnya.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <div class="symbol-grid">
+      <article class="symbol-card reveal" style="--c:#C1663F">
+        <div class="symbol-shape">
+          <svg viewBox="0 0 104 62"><rect x="8" y="13" width="88" height="36" rx="18"/></svg>
+        </div>
+        <h3>Terminator</h3>
+        <p class="symbol-func">Menandai <b>awal (Mulai)</b> dan <b>akhir (Selesai)</b> sebuah program.</p>
+        <span class="symbol-ex">MULAI / SELESAI</span>
+      </article>
+
+      <article class="symbol-card reveal" style="--c:#2A9D8F">
+        <div class="symbol-shape">
+          <svg viewBox="0 0 104 62"><rect x="10" y="13" width="84" height="36" rx="4"/></svg>
+        </div>
+        <h3>Process</h3>
+        <p class="symbol-func">Menyatakan sebuah <b>proses</b> atau perhitungan, misalnya menghitung total.</p>
+        <span class="symbol-ex">total = harga × jumlah</span>
+      </article>
+
+      <article class="symbol-card reveal" style="--c:#E9B44C">
+        <div class="symbol-shape">
+          <svg viewBox="0 0 104 62"><polygon points="24,13 102,13 80,49 2,49"/></svg>
+        </div>
+        <h3>Input / Output</h3>
+        <p class="symbol-func">Menerima <b>data masuk</b> dari pengguna atau menampilkan <b>hasil</b>.</p>
+        <span class="symbol-ex">INPUT nama / OUTPUT total</span>
+      </article>
+
+      <article class="symbol-card reveal" style="--c:#8C6BB1">
+        <div class="symbol-shape">
+          <svg viewBox="0 0 104 62"><polygon points="52,8 98,31 52,54 6,31"/></svg>
+        </div>
+        <h3>Decision</h3>
+        <p class="symbol-func">Menyatakan <b>keputusan / percabangan</b> — biasanya jawabannya Ya atau Tidak.</p>
+        <span class="symbol-ex">total &gt; 100.000 ?</span>
+      </article>
+
+      <article class="symbol-card reveal" style="--c:#B5762B">
+        <div class="symbol-shape">
+          <svg viewBox="0 0 104 62"><line x1="14" y1="31" x2="82" y2="31"/><polygon points="82,22 98,31 82,40" style="fill:currentColor;stroke:none"/></svg>
+        </div>
+        <h3>Garis Alir (Arrow)</h3>
+        <p class="symbol-func">Menunjukkan <b>arah jalannya</b> program dari satu simbol ke simbol berikutnya.</p>
+        <span class="symbol-ex">↓ →</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. STUDI KASUS ============ -->
+<section class="section tint" id="kasus">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Studi Kasus</span>
+      <h2>Membeli Makanan di Restoran 🍜</h2>
+      <p>
+        Bayangkan kamu sedang lapar dan masuk ke sebuah restoran. Tanpa sadar, sebenarnya kamu
+        sedang menjalani <b>sebuah algoritma</b>! Setiap langkah punya urutan yang jelas.
+        Tekan tombol di bawah untuk melihat urutannya satu per satu.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <div class="case-wrap">
+      <div class="case-intro reveal">
+        <h3>📖 Ceritanya...</h3>
+        <p>
+          Rina masuk ke restoran "Keramik Rasa", duduk, dan memesan makanan. Ia ingin tahu
+          berapa total yang harus dibayar, dan apakah ia mendapat diskon.
+        </p>
+        <p>
+          Kalau kejadian ini kita tuliskan sebagai <b>algoritma</b>, langkah-langkahnya akan
+          seperti daftar di samping. Perhatikan <b>urutannya</b> — tidak boleh ada yang ditukar!
+        </p>
+        <div class="case-question">
+          <b>Pertanyaan pemantik:</b><br>
+          Kalau langkah "membayar" diletakkan sebelum "memesan makanan", apa yang terjadi? 🤔
+          Urutan yang benar itulah inti dari <b>algoritma</b>.
+        </div>
+        <div class="case-controls">
+          <button class="btn-sm btn-run" id="runCase">▶ Jalankan Urutan</button>
+          <button class="btn-sm btn-reset" id="resetCase">↺ Ulangi</button>
+        </div>
+      </div>
+
+      <div class="flow-list" id="flowList">
+        <div class="flow-step"><span class="flow-num">1</span><span class="flow-icon">🟢</span><span class="flow-text">MULAI — program dimulai</span></div>
+        <div class="flow-step"><span class="flow-num">2</span><span class="flow-icon">🚪</span><span class="flow-text">Masuk restoran &amp; duduk di meja</span></div>
+        <div class="flow-step"><span class="flow-num">3</span><span class="flow-icon">📋</span><span class="flow-text">Menerima dan membaca menu</span></div>
+        <div class="flow-step"><span class="flow-num">4</span><span class="flow-icon">🍜</span><span class="flow-text">Memilih makanan &amp; minuman</span></div>
+        <div class="flow-step"><span class="flow-num">5</span><span class="flow-icon">🗣️</span><span class="flow-text">Memanggil pelayan &amp; memesan</span></div>
+        <div class="flow-step"><span class="flow-num">6</span><span class="flow-icon">📝</span><span class="flow-text">Pelayan mencatat pesanan</span></div>
+        <div class="flow-step"><span class="flow-num">7</span><span class="flow-icon">👨‍🍳</span><span class="flow-text">Pesanan diteruskan ke dapur &amp; dimasak</span></div>
+        <div class="flow-step"><span class="flow-num">8</span><span class="flow-icon">🍽️</span><span class="flow-text">Makanan diantar &amp; disantap</span></div>
+        <div class="flow-step"><span class="flow-num">9</span><span class="flow-icon">💰</span><span class="flow-text">Menghitung total &amp; membayar di kasir</span></div>
+        <div class="flow-step"><span class="flow-num">10</span><span class="flow-icon">🔴</span><span class="flow-text">SELESAI — program berakhir</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. TUJUAN PEMBELAJARAN ============ -->
+<section class="section alt" id="tujuan">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tujuan Pembelajaran</span>
+      <h2>Apa yang Akan Kita Kuasai Hari Ini?</h2>
+      <p>Setelah mengikuti pembelajaran ini, diharapkan kamu mampu:</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="goal-grid">
+      <article class="goal-card reveal">
+        <div class="goal-num">1</div>
+        <h3>Menjelaskan Pseudocode</h3>
+        <p>Mendefinisikan apa itu pseudocode dan menyebutkan perbedaannya dengan flowchart.</p>
+      </article>
+      <article class="goal-card reveal">
+        <div class="goal-num">2</div>
+        <h3>Menulis Pseudocode</h3>
+        <p>Menuliskan pseudocode sederhana menggunakan pola MULAI–INPUT–PROSES–OUTPUT–SELESAI dengan indentasi yang benar.</p>
+      </article>
+      <article class="goal-card reveal">
+        <div class="goal-num">3</div>
+        <h3>Mengenal Struktur Data</h3>
+        <p>Menjelaskan pengertian struktur data serta fungsi Array, Stack, dan Queue dalam kehidupan sehari-hari.</p>
+      </article>
+      <article class="goal-card reveal">
+        <div class="goal-num">4</div>
+        <h3>Membedakan LIFO &amp; FIFO</h3>
+        <p>Menunjukkan pemahaman perbedaan prinsip kerja Stack (LIFO) dan Queue (FIFO) melalui simulasi.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. APA ITU PSEUDOCODE ============ -->
+<section class="section" id="pseudocode">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Materi Inti · Bagian 1</span>
+      <h2>Apa Itu Pseudocode? 🤔</h2>
+      <p>
+        Kata <b>pseudo</b> artinya "mirip" atau "tidak asli". Jadi pseudocode adalah
+        <b>kode yang mirip kode program</b>, tapi ditulis dengan bahasa manusia yang mudah dipahami.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <div class="explain-grid" style="margin-bottom:2rem">
+      <div class="info-card reveal">
+        <h3><span class="ico" style="background:rgba(193,102,63,.13)">📘</span> Definisi</h3>
+        <p>
+          <b>Pseudocode</b> adalah cara menuliskan langkah-langkah algoritma menggunakan
+          bahasa yang menyerupai bahasa pemrograman, tetapi <b>tidak terikat aturan sintaks
+          bahasa pemrograman tertentu</b>.
+        </p>
+        <p>
+          Ia ditulis dengan bahasa sehari-hari (Indonesia/Inggris) yang disusun secara
+          terstruktur, sehingga siapa pun bisa membacanya — bahkan yang belum bisa coding.
+        </p>
+      </div>
+      <div class="info-card reveal">
+        <h3><span class="ico" style="background:rgba(42,157,143,.13)">🎯</span> Fungsinya</h3>
+        <ul>
+          <li><b>Jembatan berpikir</b> — dari ide di kepala menuju langkah kerja yang jelas.</li>
+          <li><b>Alat komunikasi</b> — bisa dibaca oleh semua orang, bukan hanya programmer.</li>
+          <li><b>Menghemat waktu</b> — kesalahan logika ketahuan sebelum eksekusi di lapangan.</li>
+          <li><b>Tidak bergantung bahasa</b> — pseudocode yang sama bisa diterjemahkan ke berbagai bahasa atau instruksi kerja.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-bottom:1.4rem">
+      <h3 style="font-size:1.35rem;font-weight:800;letter-spacing:-.5px">Flowchart vs Pseudocode — Apa Bedanya?</h3>
+      <p style="margin-top:.5rem">Keduanya sama-sama menggambarkan algoritma. Yang membedakan adalah <b>cara penyampaiannya</b>.</p>
+    </div>
+
+    <div class="table-wrap reveal" style="margin-bottom:2rem">
+      <table>
+        <thead>
+          <tr>
+            <th>Aspek</th>
+            <th>📊 Flowchart</th>
+            <th>📝 Pseudocode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Bentuk</b></td>
+            <td>Gambar / diagram simbol</td>
+            <td>Tulisan / teks baris per baris</td>
+          </tr>
+          <tr>
+            <td><b>Cara membaca</b></td>
+            <td>Mengikuti arah panah</td>
+            <td>Dibaca dari atas ke bawah</td>
+          </tr>
+          <tr>
+            <td><b>Keunggulan</b></td>
+            <td>Lebih mudah <i>dilihat</i> alurnya secara keseluruhan</td>
+            <td>Lebih mudah <b>ditulis, diedit, dan diikuti</b></td>
+          </tr>
+          <tr>
+            <td><b>Kelemahan</b></td>
+            <td>Rumit kalau algoritmanya panjang &amp; banyak cabang</td>
+            <td>Alur bercabang agak sulit dibayangkan tanpa latihan</td>
+          </tr>
+          <tr>
+            <td><b>Cocok untuk</b></td>
+            <td>Presentasi &amp; penjelasan visual</td>
+            <td>Perancangan proses &amp; diskusi logika</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VERSI RINGKAS: Kenapa anak keramik perlu belajar pseudocode -->
+    <div class="info-card reveal" style="border-left:5px solid var(--gold)">
+      <h3><span class="ico" style="background:rgba(233,180,76,.18)">💡</span> Untuk Anak Keramik, Ngapain Belajar Pseudocode?</h3>
+      <p>
+        Kita memang tidak akan jadi programmer. Tapi pseudocode itu <b>bukan tentang coding</b> —
+        ia melatih kita <b>berpikir runtut dan menuliskan langkah kerja dengan jelas</b>.
+        Membuat keramik juga punya urutan langkah, kan? Itulah pseudocode-nya dunia keramik.
+      </p>
+      <ul>
+        <li><b>Membuat SOP</b> — urutan kerja yang bisa diikuti siapa pun, hasil keramik konsisten.</li>
+        <li><b>Menghitung bahan &amp; biaya</b> — tanah liat, glasir, biaya bakar, semua bisa dihitung runtut.</li>
+        <li><b>Melacak kesalahan</b> — kalau keramik retak, kita tahu di tahap mana masalahnya.</li>
+        <li><b>Mengajarkan ke orang lain</b> — ajari adik kelas atau karyawan baru dengan panduan yang jelas.</li>
+        <li><b>Berpikir sebelum bertindak</b> — hemat bahan, waktu, dan tenaga.</li>
+      </ul>
+      <div class="case-question" style="margin-top:1.2rem">
+        <b>Intinya:</b> pseudocode adalah <b>alat berpikir</b> agar kita lebih teliti dan
+        terencana — berguna di bidang apa pun, termasuk keramik. 🎨
+      </div>
+    </div>
+
+    <!-- BONUS: Contoh pseudocode versi perajin keramik -->
+    <div class="code-block reveal" style="margin-top:2rem">
+      <div class="code-head">
+        <div class="code-dots"><i></i><i></i><i></i></div>
+        <span class="code-title">buat_keramik.txt — Pseudocode Versi Perajin Keramik</span>
+      </div>
+<pre><span class="cm">// Proses membuat 1 buah mangkuk keramik</span>
+<span class="kw">MULAI</span>
+    <span class="io">INPUT</span> berat_tanah_liat      <span class="cm">// misal 500 gram</span>
+    <span class="io">INPUT</span> suhu_pembakaran       <span class="cm">// misal 1000°C</span>
+    <span class="io">INPUT</span> warna_glasir
+
+    <span class="kw">PROSES</span> uli_tanah_liat
+    <span class="kw">PROSES</span> bentuk_mangkuk
+    <span class="kw">PROSES</span> keringkan <span class="op">←</span> <span class="str">3</span> hari
+
+    <span class="kw">JIKA</span> sudah_kering <span class="kw">MAKA</span>
+        <span class="kw">PROSES</span> bakar_di_kiln <span class="op">←</span> suhu_pembakaran
+    <span class="kw">SELAIN ITU</span>
+        <span class="io">OUTPUT</span> <span class="str">"Tunggu sampai benar-benar kering!"</span>
+    <span class="kw">AKHIR JIKA</span>
+
+    <span class="kw">PROSES</span> olesi_glasir <span class="op">←</span> warna_glasir
+    <span class="kw">PROSES</span> bakar_kedua <span class="op">←</span> <span class="str">1200</span>
+    <span class="io">OUTPUT</span> <span class="str">"Mangkuk keramik siap dipakai!"</span>
+<span class="kw">SELESAI</span></pre>
+    </div>
+
+    <div class="sim-hint reveal" style="margin-top:1rem;border-left-color:var(--gold);background:rgba(233,180,76,.12)">
+      🎨 <b>Perhatikan:</b> Strukturnya persis sama dengan pseudocode program komputer —
+      ada <b>MULAI</b>, <b>INPUT</b>, <b>PROSES</b>, <b>JIKA-MAKA</b>, <b>OUTPUT</b>, dan
+      <b>SELESAI</b>. Hanya isinya yang diganti dengan langkah-langkah keramik.
+      Jadi pseudocode itu <b>universal</b>: bisa dipakai untuk apa saja, termasuk pekerjaanmu nanti!
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PENULISAN PSEUDOCODE ============ -->
+<section class="section tint" id="penulisan">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Materi Inti · Bagian 2</span>
+      <h2>Aturan Penulisan Pseudocode ✍️</h2>
+      <p>
+        Pseudocode memang bebas, tapi di kelas kita sepakati satu gaya penulisan agar
+        semua orang bisa membacanya dengan mudah.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <h3 class="reveal" style="font-size:1.2rem;margin-bottom:1rem">A. Lima Kata Kunci Utama</h3>
+    <div class="syntax-grid">
+      <div class="syntax-card reveal" style="--c:#C1663F">
+        <span class="cmd">MULAI</span>
+        <p>Menandai <b>awal</b> program. Selalu ditulis paling atas.</p>
+      </div>
+      <div class="syntax-card reveal" style="--c:#E9B44C">
+        <span class="cmd">INPUT</span>
+        <p>Menerima <b>data dari pengguna</b>. Contoh: <code>INPUT harga</code></p>
+      </div>
+      <div class="syntax-card reveal" style="--c:#2A9D8F">
+        <span class="cmd">PROSES</span>
+        <p>Melakukan <b>perhitungan atau pengolahan</b> data. Contoh: <code>PROSES total ← harga × jumlah</code></p>
+      </div>
+      <div class="syntax-card reveal" style="--c:#8C6BB1">
+        <span class="cmd">OUTPUT</span>
+        <p>Menampilkan <b>hasil</b> ke layar. Contoh: <code>OUTPUT total</code></p>
+      </div>
+      <div class="syntax-card reveal" style="--c:#D6503C">
+        <span class="cmd">SELESAI</span>
+        <p>Menandai <b>akhir</b> program. Selalu ditulis paling bawah.</p>
+      </div>
+    </div>
+
+    <div class="code-block reveal">
+      <div class="code-head">
+        <div class="code-dots"><i></i><i></i><i></i></div>
+        <span class="code-title">contoh_1.txt — Pola Dasar</span>
+      </div>
+<pre><span class="kw">MULAI</span>
+    <span class="io">INPUT</span> nama_makanan
+    <span class="io">INPUT</span> harga
+    <span class="io">INPUT</span> jumlah
+    <span class="kw">PROSES</span> total <span class="op">←</span> harga <span class="op">×</span> jumlah
+    <span class="io">OUTPUT</span> total
+<span class="kw">SELESAI</span></pre>
+    </div>
+
+    <h3 class="reveal" style="font-size:1.2rem;margin:2.4rem 0 1rem">B. Percabangan: JIKA — MAKA — SELAIN ITU</h3>
+    <p class="reveal" style="color:var(--ink-soft);font-size:.94rem;margin-bottom:1rem;max-width:760px">
+      Kalau program harus mengambil <b>keputusan</b>, kita gunakan <b>JIKA … MAKA</b>.
+      Bila kondisinya tidak terpenuhi, jalankan <b>SELAIN ITU</b>, lalu tutup dengan <b>AKHIR JIKA</b>.
+    </p>
+
+    <div class="syntax-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <div class="syntax-card reveal" style="--c:#8C6BB1">
+        <span class="cmd">JIKA … MAKA</span>
+        <p>Menjalankan perintah bila <b>kondisi benar (TRUE)</b>.</p>
+      </div>
+      <div class="syntax-card reveal" style="--c:#D6503C">
+        <span class="cmd">SELAIN ITU</span>
+        <p>Menjalankan perintah bila <b>kondisi salah (FALSE)</b>.</p>
+      </div>
+      <div class="syntax-card reveal" style="--c:#5F4B8B">
+        <span class="cmd">AKHIR JIKA</span>
+        <p>Menutup blok percabangan.</p>
+      </div>
+    </div>
+
+    <div class="code-block reveal">
+      <div class="code-head">
+        <div class="code-dots"><i></i><i></i><i></i></div>
+        <span class="code-title">contoh_2.txt — Diskon Restoran</span>
+      </div>
+<pre><span class="kw">MULAI</span>
+    <span class="io">INPUT</span> total_belanja
+    <span class="kw">JIKA</span> total_belanja <span class="op">&gt;</span> <span class="str">100000</span> <span class="kw">MAKA</span>
+        <span class="io">OUTPUT</span> <span class="str">"Selamat! Anda mendapat diskon 10%"</span>
+        <span class="kw">PROSES</span> bayar <span class="op">←</span> total_belanja <span class="op">×</span> <span class="str">0.9</span>
+    <span class="kw">SELAIN ITU</span>
+        <span class="kw">PROSES</span> bayar <span class="op">←</span> total_belanja
+    <span class="kw">AKHIR JIKA</span>
+    <span class="io">OUTPUT</span> bayar
+<span class="kw">SELESAI</span></pre>
+    </div>
+
+    <h3 class="reveal" style="font-size:1.2rem;margin:2.4rem 0 1rem">C. Aturan Indentasi (Menjorok)</h3>
+    <p class="reveal" style="color:var(--ink-soft);font-size:.94rem;margin-bottom:1.2rem;max-width:780px">
+      <b>Indentasi</b> adalah jarak menjorok ke kanan di awal baris. Fungsinya menunjukkan
+      bahwa baris tersebut <b>berada "di dalam"</b> sebuah blok perintah.
+      Gunakan <b>4 spasi</b> (atau 1 tombol Tab) untuk setiap tingkat, dan harus <b>konsisten</b>.
+    </p>
+
+    <div class="indent-demo reveal">
+      <div class="indent-row">
+        <div class="indent-guides"><span></span></div>
+        <div class="indent-code" style="background:#3A302A">MULAI</div>
+        <span class="indent-note">← tingkat 0 (paling luar)</span>
+      </div>
+      <div class="indent-row">
+        <div class="indent-guides"><span></span><span></span></div>
+        <div class="indent-code">INPUT total</div>
+        <span class="indent-note">← tingkat 1 (isi program, 4 spasi)</span>
+      </div>
+      <div class="indent-row">
+        <div class="indent-guides"><span></span><span></span></div>
+        <div class="indent-code">JIKA total &gt; 100000 MAKA</div>
+        <span class="indent-note">← tingkat 1</span>
+      </div>
+      <div class="indent-row">
+        <div class="indent-guides"><span></span><span></span><span></span></div>
+        <div class="indent-code">OUTPUT "Diskon!"</div>
+        <span class="indent-note">← tingkat 2 (di dalam JIKA, 8 spasi)</span>
+      </div>
+      <div class="indent-row">
+        <div class="indent-guides"><span></span><span></span></div>
+        <div class="indent-code">AKHIR JIKA</div>
+        <span class="indent-note">← kembali ke tingkat 1</span>
+      </div>
+      <div class="indent-row">
+        <div class="indent-guides"><span></span></div>
+        <div class="indent-code" style="background:#3A302A">SELESAI</div>
+        <span class="indent-note">← tingkat 0</span>
+      </div>
+      <div class="sim-hint" style="margin-top:1rem">
+        ⚠️ <b>Ingat:</b> Indentasi bukan sekadar hiasan! Ia membantu kita (dan orang lain)
+        melihat mana perintah yang berada di dalam sebuah blok. Tanpa indentasi,
+        pseudocode jadi sulit dibaca dan rawan salah logika.
+      </div>
+    </div>
+
+    <h3 class="reveal" style="font-size:1.2rem;margin:2.4rem 0 1rem">D. Perulangan: SELAMA … LAKUKAN</h3>
+    <div class="code-block reveal">
+      <div class="code-head">
+        <div class="code-dots"><i></i><i></i><i></i></div>
+        <span class="code-title">contoh_3.txt — Perulangan</span>
+      </div>
+<pre><span class="kw">MULAI</span>
+    <span class="kw">PROSES</span> i <span class="op">←</span> <span class="str">1</span>
+    <span class="kw">SELAMA</span> i <span class="op">≤</span> <span class="str">5</span> <span class="kw">LAKUKAN</span>
+        <span class="io">OUTPUT</span> <span class="str">"Pesanan ke-"</span> <span class="op">+</span> i
+        <span class="kw">PROSES</span> i <span class="op">←</span> i <span class="op">+</span> <span class="str">1</span>
+    <span class="kw">AKHIR SELAMA</span>
+<span class="kw">SELESAI</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. CONTOH LENGKAP ============ -->
+<section class="section alt" id="contoh">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Mari Mencoba</span>
+      <h2>Contoh Lengkap Pseudocode 🧾</h2>
+      <p>
+        Sekarang kita ubah <b>studi kasus restoran</b> tadi menjadi pseudocode yang utuh.
+        Perhatikan bagaimana setiap langkah menjadi satu baris perintah.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <div class="code-block reveal">
+      <div class="code-head">
+        <div class="code-dots"><i></i><i></i><i></i></div>
+        <span class="code-title">pesan_makanan.txt — Studi Kasus Restoran</span>
+      </div>
+<pre><span class="cm">// Program memesan makanan di restoran</span>
+<span class="kw">MULAI</span>
+    <span class="io">OUTPUT</span> <span class="str">"Selamat datang di Restoran Keramik Rasa!"</span>
+
+    <span class="io">INPUT</span> nama_pelanggan
+    <span class="io">INPUT</span> nama_makanan
+    <span class="io">INPUT</span> harga_makanan
+    <span class="io">INPUT</span> jumlah_porsi
+
+    <span class="kw">PROSES</span> total <span class="op">←</span> harga_makanan <span class="op">×</span> jumlah_porsi
+
+    <span class="kw">JIKA</span> total <span class="op">&gt;</span> <span class="str">100000</span> <span class="kw">MAKA</span>
+        <span class="io">OUTPUT</span> <span class="str">"Anda mendapat diskon 10%"</span>
+        <span class="kw">PROSES</span> bayar <span class="op">←</span> total <span class="op">×</span> <span class="str">0.9</span>
+    <span class="kw">SELAIN ITU</span>
+        <span class="kw">PROSES</span> bayar <span class="op">←</span> total
+    <span class="kw">AKHIR JIKA</span>
+
+    <span class="io">OUTPUT</span> <span class="str">"Terima kasih, "</span> <span class="op">+</span> nama_pelanggan
+    <span class="io">OUTPUT</span> <span class="str">"Total yang harus dibayar: Rp"</span> <span class="op">+</span> bayar
+<span class="kw">SELESAI</span></pre>
+    </div>
+
+    <div class="explain-grid" style="margin-top:2rem">
+      <div class="info-card reveal">
+        <h3><span class="ico" style="background:rgba(193,102,63,.13)">🔍</span> Bedah Baris per Baris</h3>
+        <ul>
+          <li><b>MULAI</b> — tanda program dimulai.</li>
+          <li><b>OUTPUT "Selamat datang…"</b> — menampilkan sapaan.</li>
+          <li><b>INPUT …</b> (4 baris) — meminta data dari pelanggan.</li>
+          <li><b>PROSES total ← …</b> — menghitung total harga.</li>
+          <li><b>JIKA … MAKA</b> — memeriksa apakah dapat diskon.</li>
+          <li><b>OUTPUT bayar</b> — menampilkan hasil akhir.</li>
+          <li><b>SELESAI</b> — tanda program berakhir.</li>
+        </ul>
+      </div>
+      <div class="info-card reveal" style="border-left:5px solid var(--teal)">
+        <h3><span class="ico" style="background:rgba(42,157,143,.13)">✏️</span> Coba Sendiri!</h3>
+        <p>Ubah pseudocode di atas menjadi kasus milikmu sendiri. Misalnya:</p>
+        <ul>
+          <li>Membeli bahan tanah liat di toko.</li>
+          <li>Menghitung biaya pembakaran keramik di kiln.</li>
+          <li>Menghitung total pesanan 3 jenis mangkuk keramik.</li>
+        </ul>
+        <p style="margin-top:.9rem">Gunakan pola yang sama: <b>MULAI → INPUT → PROSES → OUTPUT → SELESAI</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. STRUKTUR DATA ============ -->
+<section class="section tint" id="strukturdata">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Materi Inti · Bagian 3</span>
+      <h2>Mengenal Struktur Data 🗂️</h2>
+      <p>
+        Kalau pseudocode adalah cara kita <b>menuliskan langkah</b>, maka struktur data adalah
+        cara kita <b>menyimpan dan menata data</b> agar mudah diolah.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <div class="explain-grid">
+      <div class="info-card reveal">
+        <h3><span class="ico" style="background:rgba(193,102,63,.13)">📦</span> Apa Itu Struktur Data?</h3>
+        <p>
+          <b>Struktur data</b> adalah cara khusus untuk <b>menyimpan, mengatur, dan mengelola
+          data</b> di dalam komputer sehingga data tersebut dapat digunakan secara efisien.
+        </p>
+        <p>
+          Analoginya seperti <b>wadah di dapur</b>: ada wadah untuk sendok, ada rak untuk piring,
+          ada kulkas untuk bahan makanan. Masing-masing wadah dipilih sesuai kebutuhan.
+        </p>
+      </div>
+      <div class="info-card reveal">
+        <h3><span class="ico" style="background:rgba(42,157,143,.13)">🧠</span> Kenapa Penting?</h3>
+        <ul>
+          <li><b>Data lebih rapi</b> — tidak tercampur dan mudah dicari.</li>
+          <li><b>Proses lebih cepat</b> — data ditemukan dengan efisien.</li>
+          <li><b>Hemat ruang</b> — hanya menyimpan yang benar-benar dibutuhkan.</li>
+          <li><b>Mudah dikembangkan</b> — saat data bertambah banyak, semuanya tetap terkendali.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="reveal" style="margin-top:2.2rem;color:var(--ink-soft);font-size:.96rem;max-width:820px">
+      Ada banyak jenis struktur data, tetapi hari ini kita akan fokus pada <b>tiga yang paling dasar
+      dan paling sering dipakai</b>: <b>Array</b>, <b>Stack</b>, dan <b>Queue</b>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 8. TIGA JENIS STRUKTUR DATA ============ -->
+<section class="section alt" id="jenis">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tiga Struktur Data Dasar</span>
+      <h2>Array, Stack, dan Queue</h2>
+      <p>Perhatikan baik-baik prinsip kerjanya — terutama perbedaan <b>LIFO</b> dan <b>FIFO</b>.</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="ds-grid">
+      <article class="ds-card reveal">
+        <div class="ds-head">
+          <div>
+            <h3>Array</h3>
+            <span class="ds-sub">Kumpulan data berurutan</span>
+          </div>
+          <div class="ds-icon" style="background:linear-gradient(135deg,var(--clay),var(--clay-dark));color:#fff">🔢</div>
+        </div>
+        <p>
+          <b>Array</b> adalah struktur data yang menyimpan <b>banyak nilai dalam satu variabel</b>,
+          disusun berurutan dan masing-masing punya <b>nomor indeks</b>.
+        </p>
+        <ul>
+          <li>Indeks biasanya dimulai dari <b>0</b>, bukan 1.</li>
+          <li>Data diakses langsung lewat indeksnya → sangat cepat.</li>
+          <li>Ukurannya <b>tetap</b> (harus ditentukan sejak awal).</li>
+          <li>Semua data biasanya bertipe sama.</li>
+        </ul>
+        <div class="sim-hint" style="margin-top:1rem">
+          🍽️ <b>Analogi:</b> Rak piring yang tiap slotnya diberi nomor. Mau ambil piring slot
+          ke-3? Langsung ambil tanpa menggeser yang lain.
+        </div>
+      </article>
+
+      <article class="ds-card reveal">
+        <div class="ds-head">
+          <div>
+            <h3>Stack</h3>
+            <span class="ds-sub">Tumpukan</span>
+          </div>
+          <div class="ds-icon" style="background:linear-gradient(135deg,#8C6BB1,#5F4B8B);color:#fff">🥞</div>
+        </div>
+        <p>
+          <b>Stack</b> adalah struktur data yang bekerja seperti <b>tumpukan</b>. Data baru
+          diletakkan di <b>paling atas</b>, dan yang bisa diambil juga hanya dari <b>paling atas</b>.
+        </p>
+        <p style="margin-top:.4rem">
+          Prinsipnya disebut <b>LIFO</b> — <i>Last In, First Out</i>:
+          <b>yang terakhir masuk, dia yang pertama keluar</b>.
+        </p>
+        <div style="margin:.9rem 0">
+          <span class="badge-lifo">LIFO</span>
+        </div>
+        <ul>
+          <li><b>Push</b> = menambah data ke atas tumpukan.</li>
+          <li><b>Pop</b> = mengambil data dari atas tumpukan.</li>
+          <li><b>Peek/Top</b> = melihat data paling atas tanpa mengeluarkannya.</li>
+        </ul>
+        <div class="sim-hint" style="margin-top:1rem">
+          🍽️ <b>Analogi:</b> Tumpukan piring di meja makan. Piring yang paling akhir
+          diletakkan adalah yang paling pertama diambil.
+        </div>
+      </article>
+
+      <article class="ds-card reveal">
+        <div class="ds-head">
+          <div>
+            <h3>Queue</h3>
+            <span class="ds-sub">Antrean</span>
+          </div>
+          <div class="ds-icon" style="background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff">🚶</div>
+        </div>
+        <p>
+          <b>Queue</b> adalah struktur data yang bekerja seperti <b>antrean</b>. Data baru
+          masuk dari <b>belakang</b>, dan data diambil dari <b>depan</b>.
+        </p>
+        <p style="margin-top:.4rem">
+          Prinsipnya disebut <b>FIFO</b> — <i>First In, First Out</i>:
+          <b>yang pertama masuk, dia yang pertama keluar</b>.
+        </p>
+        <div style="margin:.9rem 0">
+          <span class="badge-fifo">FIFO</span>
+        </div>
+        <ul>
+          <li><b>Enqueue</b> = menambah data ke belakang antrean.</li>
+          <li><b>Dequeue</b> = mengambil data dari depan antrean.</li>
+          <li><b>Front</b> = data paling depan, <b>Rear</b> = data paling belakang.</li>
+        </ul>
+        <div class="sim-hint" style="margin-top:1rem">
+          🍽️ <b>Analogi:</b> Antrean di kasir restoran. Yang datang lebih dulu,
+          dilayani lebih dulu.
+        </div>
+      </article>
+    </div>
+
+    <div class="table-wrap reveal" style="margin-top:2rem">
+      <table>
+        <thead>
+          <tr>
+            <th>Struktur Data</th>
+            <th>Prinsip</th>
+            <th>Masuk dari</th>
+            <th>Keluar dari</th>
+            <th>Contoh Sehari-hari</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Array</b></td>
+            <td>Akses lewat indeks</td>
+            <td>Indeks mana pun</td>
+            <td>Indeks mana pun</td>
+            <td>Rak piring bernomor</td>
+          </tr>
+          <tr>
+            <td><b>Stack</b></td>
+            <td><span class="badge-lifo">LIFO</span></td>
+            <td>Atas (Top)</td>
+            <td>Atas (Top)</td>
+            <td>Tumpukan piring, tombol Undo</td>
+          </tr>
+          <tr>
+            <td><b>Queue</b></td>
+            <td><span class="badge-fifo">FIFO</span></td>
+            <td>Belakang (Rear)</td>
+            <td>Depan (Front)</td>
+            <td>Antrean kasir, antrean printer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. SIMULASI ============ -->
+<section class="section" id="simulasi">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ayo Praktik!</span>
+      <h2>Simulasi Interaktif 🎮</h2>
+      <p>
+        Sekarang giliranmu mencoba. Klik tab di bawah, lalu tekan tombol-tombolnya untuk
+        melihat sendiri bagaimana Array, Stack, dan Queue bekerja.
+      </p>
+      <div class="line"></div>
+    </div>
+
+    <div class="sim-tabs reveal">
+      <button class="sim-tab active" data-tab="array">🔢 Simulasi Array</button>
+      <button class="sim-tab" data-tab="stack">🥞 Simulasi Stack (LIFO)</button>
+      <button class="sim-tab" data-tab="queue">🚶 Simulasi Queue (FIFO)</button>
+    </div>
+
+    <div class="sim-panel active" id="panel-array">
+      <div class="sim-box">
+        <div class="sim-title">🔢 Array — Rak Bernomor <span class="badge-fifo" style="background:linear-gradient(135deg,var(--clay),var(--clay-dark))">AKSES VIA INDEKS</span></div>
+        <p class="sim-desc">
+          Array di bawah punya <b>8 slot</b> dengan indeks <b>0 sampai 7</b>. Isi sebuah slot,
+          hapus isinya, atau akses isinya lewat nomor indeks.
+        </p>
+
+        <div class="ctrl-row">
+          <input type="number" class="ctrl-input" id="arrIndex" placeholder="Indeks 0-7" min="0" max="7">
+          <input type="text" class="ctrl-input" id="arrValue" placeholder="Nilai" style="width:130px">
+          <button class="btn-sm btn-run" id="arrSet">✏️ Isi Indeks</button>
+          <button class="btn-sm btn-reset" id="arrGet">🔍 Akses Indeks</button>
+          <button class="btn-sm btn-reset" id="arrDel">🗑️ Hapus Indeks</button>
+          <button class="btn-sm btn-reset" id="arrReset">↺ Reset</button>
+        </div>
+
+        <div class="array-grid" id="arrayGrid"></div>
+
+        <div class="sim-log" id="arrLog">💡 Masukkan indeks dan nilai, lalu tekan "Isi Indeks".</div>
+        <div class="sim-hint">
+          <b>Ingat:</b> indeks array dimulai dari <b>0</b>. Jadi data pertama ada di indeks 0,
+          data kedua di indeks 1, dan seterusnya. Untuk mengakses data ke-5, kita tulis
+          <code>array[4]</code>.
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-panel" id="panel-stack">
+      <div class="sim-box">
+        <div class="sim-title">🥞 Stack — Tumpukan <span class="badge-lifo">LIFO</span></div>
+        <p class="sim-desc">
+          Data ditambahkan ke <b>atas tumpukan</b> (Push) dan diambil dari <b>atas tumpukan</b> (Pop).
+          Yang terakhir masuk, dia yang pertama keluar!
+        </p>
+
+        <div class="ctrl-row">
+          <input type="text" class="ctrl-input" id="stackValue" placeholder="Nilai" style="width:130px">
+          <button class="btn-sm btn-run" id="stackPush">⬆️ Push (Tambah)</button>
+          <button class="btn-sm btn-reset" id="stackPop">⬇️ Pop (Ambil)</button>
+          <button class="btn-sm btn-reset" id="stackPeek">👀 Peek</button>
+          <button class="btn-sm btn-reset" id="stackReset">↺ Reset</button>
+        </div>
+
+        <div class="stack-holder" id="stackHolder"></div>
+        <div class="stack-base"></div>
+
+        <div class="sim-log" id="stackLog">💡 Tekan "Push" untuk menambahkan data ke atas tumpukan.</div>
+        <div class="sim-hint">
+          <b>Analogi:</b> seperti tumpukan piring. Piring yang paling akhir kamu letakkan
+          ada di paling atas — dan itulah yang pertama kamu ambil. Kalau piringnya habis,
+          kamu tidak bisa mengambil piring di bawah tanpa mengangkat yang atas dulu.
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-panel" id="panel-queue">
+      <div class="sim-box">
+        <div class="sim-title">🚶 Queue — Antrean <span class="badge-fifo">FIFO</span></div>
+        <p class="sim-desc">
+          Data masuk dari <b>belakang</b> (Enqueue) dan keluar dari <b>depan</b> (Dequeue).
+          Yang pertama datang, dilayani lebih dulu!
+        </p>
+
+        <div class="ctrl-row">
+          <input type="text" class="ctrl-input" id="queueValue" placeholder="Nilai" style="width:130px">
+          <button class="btn-sm btn-run" id="queueEnq">➡️ Enqueue (Masuk)</button>
+          <button class="btn-sm btn-reset" id="queueDeq">⬅️ Dequeue (Keluar)</button>
+          <button class="btn-sm btn-reset" id="queueReset">↺ Reset</button>
+        </div>
+
+        <div class="queue-holder" id="queueHolder"></div>
+
+        <div class="sim-log" id="queueLog">💡 Tekan "Enqueue" untuk menambahkan orang ke antrean.</div>
+        <div class="sim-hint">
+          <b>Analogi:</b> antrean di kasir restoran. Orang yang datang lebih dulu berdiri
+          di depan dan dilayani lebih dulu. Orang baru selalu masuk dari belakang.
+          Tidak ada yang boleh menyerobot antrean! 😄
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. KUIS ============ -->
+<section class="section tint" id="kuis">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cek Pemahaman</span>
+      <h2>Kuis Kilat ✅</h2>
+      <p>Jawab tiga pertanyaan berikut untuk memastikan kamu sudah memahami materi hari ini.</p>
+      <div class="line"></div>
+    </div>
+
+    <div id="quizArea"></div>
+
+    <div class="reveal" style="text-align:center;margin-top:2rem">
+      <div id="quizScore" style="font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.05rem;color:var(--clay-dark)"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h3>🎨 Kelas X Keramik B</h3>
+  <p>Materi: Pseudocode &amp; Struktur Data — Mata Pelajaran Informatika</p>
+  <p>Teruslah berlatih menuliskan logika, karena perajin hebat lahir dari kebiasaan berpikir runtut.</p>
+  <div class="foot-note">© 2025 · Modul Pembelajaran Interaktif · Dibuat untuk pembelajaran di kelas</div>
+</footer>
+
+<button id="toTop" aria-label="Kembali ke atas">↑</button>
+
+<script>
+/* ============================================================
+   1. PROGRESS BAR + NAVBAR + BACK TO TOP
+   ============================================================ */
+const progress = document.getElementById('progress');
+const nav = document.getElementById('nav');
+const toTop = document.getElementById('toTop');
+
+function onScroll(){
+  const h = document.documentElement;
+  const scrolled = h.scrollTop;
+  const total = h.scrollHeight - h.clientHeight;
+  progress.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+  nav.classList.toggle('scrolled', scrolled > 20);
+  toTop.classList.toggle('show', scrolled > 500);
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ============================================================
+   2. MOBILE NAV TOGGLE
+   ============================================================ */
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+/* ============================================================
+   3. SCROLL REVEAL
+   ============================================================ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting){
+      setTimeout(() => entry.target.classList.add('in'), i * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ============================================================
+   4. STUDI KASUS — ANIMASI URUTAN
+   ============================================================ */
+const flowSteps = document.querySelectorAll('#flowList .flow-step');
+let caseTimer = null;
+
+document.getElementById('runCase').addEventListener('click', () => {
+  clearTimeout(caseTimer);
+  flowSteps.forEach(s => s.classList.remove('active','done'));
+  let i = 0;
+  function next(){
+    if (i > 0) flowSteps[i-1].classList.replace('active','done');
+    if (i >= flowSteps.length){
+      flowSteps.forEach(s => s.classList.remove('active'));
+      return;
+    }
+    flowSteps[i].classList.add('active');
+    i++;
+    caseTimer = setTimeout(next, 750);
+  }
+  next();
+});
+
+document.getElementById('resetCase').addEventListener('click', () => {
+  clearTimeout(caseTimer);
+  flowSteps.forEach(s => s.classList.remove('active','done'));
+});
+
+/* ============================================================
+   5. SIMULASI ARRAY
+   ============================================================ */
+const ARR_SIZE = 8;
+let arrData = ['10','20','30','40','','','',''];
+const arrGrid = document.getElementById('arrayGrid');
+const arrLog = document.getElementById('arrLog');
+
+function renderArray(highlight = -1){
+  arrGrid.innerHTML = '';
+  arrData.forEach((val, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'arr-cell';
+    if (val === '') cell.classList.add('empty');
+    else cell.classList.add('filled');
+    if (i === highlight) cell.classList.add('hl');
+    cell.innerHTML = `<span class="arr-val">${val === '' ? '—' : val}</span>
+                      <span class="arr-idx">[${i}]</span>`;
+    arrGrid.appendChild(cell);
+  });
+}
+
+function arrMsg(text){ arrLog.textContent = text; }
+
+document.getElementById('arrSet').addEventListener('click', () => {
+  const idx = parseInt(document.getElementById('arrIndex').value, 10);
+  const val = document.getElementById('arrValue').value.trim();
+  if (isNaN(idx) || idx < 0 || idx >= ARR_SIZE){
+    arrMsg('⚠️ Indeks tidak valid! Masukkan angka 0 sampai 7.'); return;
+  }
+  if (val === ''){ arrMsg('⚠️ Nilai tidak boleh kosong.'); return; }
+  arrData[idx] = val;
+  renderArray(idx);
+  arrMsg(`✏️ Nilai "${val}" disimpan di indeks [${idx}].`);
+  document.getElementById('arrValue').value = '';
+});
+
+document.getElementById('arrGet').addEventListener('click', () => {
+  const idx = parseInt(document.getElementById('arrIndex').value, 10);
+  if (isNaN(idx) || idx < 0 || idx >= ARR_SIZE){
+    arrMsg('⚠️ Indeks tidak valid! Masukkan angka 0 sampai 7.'); return;
+  }
+  if (arrData[idx] === ''){
+    renderArray(idx);
+    arrMsg(`🔍 Indeks [${idx}] masih kosong.`);
+  } else {
+    renderArray(idx);
+    arrMsg(`🔍 array[${idx}] berisi "${arrData[idx]}". Diakses langsung tanpa mencari!`);
+  }
+});
+
+document.getElementById('arrDel').addEventListener('click', () => {
+  const idx = parseInt(document.getElementById('arrIndex').value, 10);
+  if (isNaN(idx) || idx < 0 || idx >= ARR_SIZE){
+    arrMsg('⚠️ Indeks tidak valid! Masukkan angka 0 sampai 7.'); return;
+  }
+  if (arrData[idx] === ''){ arrMsg(`🗑️ Indeks [${idx}] memang sudah kosong.`); return; }
+  const old = arrData[idx];
+  arrData[idx] = '';
+  renderArray(idx);
+  arrMsg(`🗑️ Isi indeks [${idx}] ("${old}") telah dihapus.`);
+});
+
+document.getElementById('arrReset').addEventListener('click', () => {
+  arrData = ['10','20','30','40','','','',''];
+  renderArray();
+  arrMsg('↺ Array dikembalikan ke kondisi awal.');
+});
+
+renderArray();
+
+/* ============================================================
+   6. SIMULASI STACK
+   ============================================================ */
+const STACK_MAX = 6;
+let stackData = [];
+const stackHolder = document.getElementById('stackHolder');
+const stackLog = document.getElementById('stackLog');
+
+function renderStack(){
+  stackHolder.innerHTML = '';
+  if (stackData.length === 0){
+    stackHolder.innerHTML = '<div class="stack-empty">— tumpukan kosong —</div>';
+    return;
+  }
+  for (let i = stackData.length - 1; i >= 0; i--){
+    const block = document.createElement('div');
+    block.className = 'stack-block' + (i === stackData.length - 1 ? ' top' : '');
+    block.innerHTML = `<span>${stackData[i]}</span>` +
+      (i === stackData.length - 1 ? '<em class="tag">TOP</em>' : '');
+    stackHolder.appendChild(block);
+  }
+}
+
+function stackMsg(t){ stackLog.textContent = t; }
+
+document.getElementById('stackPush').addEventListener('click', () => {
+  const input = document.getElementById('stackValue');
+  let val = input.value.trim();
+  if (val === '') val = 'Data-' + (stackData.length + 1);
+  if (stackData.length >= STACK_MAX){
+    stackMsg('⚠️ Stack penuh! Maksimal ' + STACK_MAX + ' data. Lakukan Pop dulu.');
+    return;
+  }
+  stackData.push(val);
+  renderStack();
+  stackMsg(`⬆️ Push "${val}" → data masuk ke paling ATAS tumpukan.`);
+  input.value = '';
+});
+
+document.getElementById('stackPop').addEventListener('click', () => {
+  if (stackData.length === 0){
+    stackMsg('⚠️ Stack kosong! Tidak ada yang bisa diambil. Lakukan Push dulu.');
+    return;
+  }
+  const val = stackData.pop();
+  renderStack();
+  stackMsg(`⬇️ Pop → "${val}" diambil dari ATAS. Inilah bukti LIFO: yang terakhir masuk, pertama keluar.`);
+});
+
+document.getElementById('stackPeek').addEventListener('click', () => {
+  if (stackData.length === 0){
+    stackMsg('⚠️ Stack kosong, tidak ada data untuk dilihat.');
+    return;
+  }
+  stackMsg(`👀 Peek → data paling atas adalah "${stackData[stackData.length - 1]}". (Tidak diambil, hanya dilihat.)`);
+});
+
+document.getElementById('stackReset').addEventListener('click', () => {
+  stackData = [];
+  renderStack();
+  stackMsg('↺ Stack dikosongkan.');
+});
+
+renderStack();
+
+/* ============================================================
+   7. SIMULASI QUEUE
+   ============================================================ */
+const QUEUE_MAX = 7;
+let queueData = [];
+const queueHolder = document.getElementById('queueHolder');
+const queueLog = document.getElementById('queueLog');
+
+function renderQueue(){
+  queueHolder.innerHTML = '';
+  if (queueData.length === 0){
+    queueHolder.innerHTML = '<div class="queue-empty">— antrean kosong —</div>';
+    return;
+  }
+  queueData.forEach((val, i) => {
+    const block = document.createElement('div');
+    block.className = 'queue-block' + (i === 0 ? ' front' : '');
+    let tag = '';
+    if (i === 0) tag = '<span class="q-tag">FRONT</span>';
+    if (i === queueData.length - 1 && queueData.length > 1) tag = '<span class="q-tag">REAR</span>';
+    if (i === 0 && queueData.length === 1) tag = '<span class="q-tag">FRONT · REAR</span>';
+    block.innerHTML = `<span>${val}</span>${tag}`;
+    queueHolder.appendChild(block);
+  });
+}
+
+function queueMsg(t){ queueLog.textContent = t; }
+
+document.getElementById('queueEnq').addEventListener('click', () => {
+  const input = document.getElementById('queueValue');
+  let val = input.value.trim();
+  if (val === '') val = 'Orang-' + (queueData.length + 1);
+  if (queueData.length >= QUEUE_MAX){
+    queueMsg('⚠️ Antrean penuh! Maksimal ' + QUEUE_MAX + ' data. Lakukan Dequeue dulu.');
+    return;
+  }
+  queueData.push(val);
+  renderQueue();
+  queueMsg(`➡️ Enqueue "${val}" → masuk dari BELAKANG antrean (REAR).`);
+  input.value = '';
+});
+
+document.getElementById('queueDeq').addEventListener('click', () => {
+  if (queueData.length === 0){
+    queueMsg('⚠️ Antrean kosong! Tidak ada yang bisa dilayani.');
+    return;
+  }
+  const val = queueData.shift();
+  renderQueue();
+  queueMsg(`⬅️ Dequeue → "${val}" keluar dari DEPAN antrean (FRONT). Inilah bukti FIFO: yang pertama datang, pertama dilayani.`);
+});
+
+document.getElementById('queueReset').addEventListener('click', () => {
+  queueData = [];
+  renderQueue();
+  queueMsg('↺ Antrean dikosongkan.');
+});
+
+renderQueue();
+
+/* ============================================================
+   8. TAB SIMULASI
+   ============================================================ */
+const tabs = document.querySelectorAll('.sim-tab');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.sim-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* ============================================================
+   9. KUIS
+   ============================================================ */
+const quizData = [
+  {
+    q: 'Simbol belah ketupat (diamond) pada flowchart berfungsi untuk menunjukkan…',
+    opts: ['Proses perhitungan', 'Keputusan / percabangan', 'Input dan output data', 'Awal dan akhir program'],
+    answer: 1,
+    fb: 'Benar! Belah ketupat adalah simbol Decision, dipakai untuk percabangan Ya/Tidak.'
+  },
+  {
+    q: 'Struktur data yang menerapkan prinsip LIFO (Last In, First Out) adalah…',
+    opts: ['Queue', 'Array', 'Stack', 'Linked List'],
+    answer: 2,
+    fb: 'Tepat! Stack bekerja seperti tumpukan piring — yang terakhir masuk, pertama keluar.'
+  },
+  {
+    q: 'Penulisan pseudocode yang benar untuk menerima data dari pengguna adalah…',
+    opts: ['TAMPILKAN nama', 'INPUT nama', 'SELESAI nama', 'MULAI nama'],
+    answer: 1,
+    fb: 'Betul! Kata kunci INPUT digunakan untuk menerima data dari pengguna.'
+  }
+];
+
+const quizArea = document.getElementById('quizArea');
+const scoreEl = document.getElementById('quizScore');
+let answered = 0, correctCount = 0;
+
+quizData.forEach((item, qi) => {
+  const card = document.createElement('div');
+  card.className = 'quiz-card reveal';
+
+  const qEl = document.createElement('div');
+  qEl.className = 'quiz-q';
+  qEl.innerHTML = `<span class="qn">${qi + 1}</span><span>${item.q}</span>`;
+  card.appendChild(qEl);
+
+  const optsWrap = document.createElement('div');
+  optsWrap.className = 'quiz-opts';
+
+  const fbEl = document.createElement('div');
+  fbEl.className = 'quiz-fb';
+
+  item.opts.forEach((opt, oi) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.type = 'button';
+    btn.textContent = String.fromCharCode(65 + oi) + '. ' + opt;
+    btn.addEventListener('click', () => {
+      const allBtns = optsWrap.querySelectorAll('.quiz-opt');
+      allBtns.forEach(b => b.disabled = true);
+      if (oi === item.answer){
+        btn.classList.add('correct');
+        correctCount++;
+        fbEl.className = 'quiz-fb ok show';
+        fbEl.textContent = '✅ ' + item.fb;
+      } else {
+        btn.classList.add('wrong');
+        allBtns[item.answer].classList.add('correct');
+        fbEl.className = 'quiz-fb no show';
+        fbEl.textContent = '❌ Belum tepat. ' + item.fb;
+      }
+      answered++;
+      updateScore();
+    });
+    optsWrap.appendChild(btn);
+  });
+
+  card.appendChild(optsWrap);
+  card.appendChild(fbEl);
+  quizArea.appendChild(card);
+  revealObserver.observe(card);
+});
+
+function updateScore(){
+  if (answered === quizData.length){
+    const msg = correctCount === quizData.length
+      ? `🎉 Sempurna! Skor kamu ${correctCount}/${quizData.length}. Kamu sudah paham betul materi hari ini!`
+      : `📊 Skor kamu ${correctCount}/${quizData.length}. Yuk baca ulang bagian yang masih keliru, lalu coba lagi!`;
+    scoreEl.textContent = msg;
+  } else {
+    scoreEl.textContent = `Terjawab: ${answered}/${quizData.length}`;
+  }
+}
+</script>
+</body>
+</html>

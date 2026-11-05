@@ -1680,3 +1680,14 @@ html[data-theme="light"] .ppl2-portfolio-tab, html[data-theme="light"] .ppl2-sid
   #ppl2-content-planning .ppl2-rpp-dynamic-preview { grid-row: 2; }
   #ppl2-content-planning .ppl2-rpp-analysis { grid-row: 3; }
 }
+
+/* E-Portfolio 2: tombol unduh media dan kerangka analisis siklus */
+.ppl2-cycle-analysis-panel .ppl2-media-download-row { display: flex; justify-content: flex-end; padding: 10px 14px; border-top: 1px solid var(--border); }
+.ppl2-cycle-analysis-panel .ppl2-media-download { display: inline-flex; align-items: center; gap: 7px; color: var(--gold); font-size: 11px; font-weight: 750; text-decoration: none; }
+.ppl2-cycle-analysis-panel .ppl2-media-download:hover { text-decoration: underline; }
+.ppl2-cycle-analysis-block.is-pending .ppl2-rpp-analysis-item { opacity: .78; }
+.ppl2-cycle-analysis-block.is-pending .ppl2-rpp-page { white-space: nowrap; }
+
+/* E-Portfolio 2: pratinjau media web interaktif (iframe HTML) */
+.ppl2-cycle-analysis-panel .ppl2-html-viewer { height: clamp(480px, 74vh, 780px); max-height: none; background: #fdf6ec; }
+@media (max-width: 640px) { .ppl2-cycle-analysis-panel .ppl2-html-viewer { height: 72vh; min-height: 420px; } }
